@@ -19,8 +19,18 @@ app = new Marionette.Application({
  * Here is where all app configuration should go
  * Like app level event channels or app handlers
  */
+
+// Create the main router for the application
+app.router = new Backbone.Router();
+
+// Create handler for setting page title
 app.commands.setHandler('setTitle', function(title) {
     document.title = document.title + ' - ' + title;
+});
+
+// Create handler for updating url, calling controller method if specified
+app.commands.setHandler('navigate', function(opts) {
+    app.router.navigate(opts.path, opts.trigger || false)
 });
 
 // Once the app is started all routers must be instantiated, start Backbone.history

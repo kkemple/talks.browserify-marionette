@@ -24,7 +24,7 @@ module.exports = function(grunt) {
      * Reads all files in slides dir and adds the template function to the module exports object
      * See 'js/config/readme.md' for more info
      */
-    grunt.registerTask('templates', 'builds a templates js file that can be required by browserify', function() {
+    grunt.registerTask('templates', 'builds a templates/index.js file that can be required by browserify', function() {
         var js = '';
 
         grunt.file.recurse('partials/slides/', function(abspath, rootdir, subdir, filename) {
