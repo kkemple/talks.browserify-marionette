@@ -1,8 +1,8 @@
 # Browserify + Marionette = <3
 
-This is a presentation application built with Browserify and Marionette. You can view the annotated source at [http://github.io/kkemple/browserify.marionette](http://github.io/kkemple/talks.browserify-marionette)
+This is a presentation application built with Browserify and Marionette. You can view the annotated source at [http://github.io/kkemple/talks.browserify-marionette](http://github.io/kkemple/talks.browserify-marionette)
 
-The actual slides for the presentation can be viewed at [http://github.io/kkemple/talks.browserify.marionette](http://github.io/kkemple/slides.browserify-marionette)
+The actual slides for the presentation can be viewed at [http://github.io/kkemple/slides.browserify.marionette](http://github.io/kkemple/slides.browserify-marionette)
 
 ### Overview
 
@@ -28,7 +28,7 @@ The actual slides for the presentation can be viewed at [http://github.io/kkempl
     - Setting Up Routing
 
 - Resources
-    -
+
 
 
 ### Building the project
