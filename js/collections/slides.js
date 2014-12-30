@@ -17,7 +17,7 @@ Slides = Backbone.Collection.extend({
 
     /**
      * Responsible for transitioning to the next step/slide
-     * Checks the current slide to see if it has steps and can step forward
+     * Checks the current slide (model) to see if it has steps and can step forward
      * if it can not, it checks the collection itself
      */
     stepForward: function() {
@@ -53,6 +53,22 @@ Slides = Backbone.Collection.extend({
         if (this.index === 0) return;
         slide.set('active', false);
         this.at(--this.index).set('active', true);
+    },
+
+    /**
+     * Responsible for transitioning to the specified slide
+     * Sets current slide to not active, then grabs slide at specified index and sets to active
+     */
+    stepTo: function(index) {
+        var slide;
+
+        if (index === this.index) return;
+        slide = this.findWhere({ active: true });
+        if (!slide) return;
+
+        slide.set('active', false);
+        this.at(index).set('active', true);
+        this.index = index;
     }
 });
 

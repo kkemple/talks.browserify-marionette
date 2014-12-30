@@ -3,6 +3,9 @@ var path = require('path');
 module.exports = function(grunt) {
     "use strict";
 
+    /**
+     * Use `load-grunt-config` plugin to load task config dynamicly
+     */
     require('load-grunt-config')(grunt, {
         configPath: path.join(__dirname, 'grunt-tasks'),
         loadGruntTasks: {
@@ -10,10 +13,17 @@ module.exports = function(grunt) {
         }
     });
 
+    // only test the quality of the code
     grunt.registerTask('test', ['jshint', /*'jasmine'*/]);
 
+    // build the app output
     grunt.registerTask('build', ['test', 'clean',  'copy', 'templates', 'sass', 'uglify', 'browserify']);
 
+    /**
+     * Custom grunt task to automagically require all templates for the slides
+     * Reads all files in slides dir and adds the template function to the module exports object
+     * See 'js/config/readme.md' for more info
+     */
     grunt.registerTask('templates', 'builds a templates js file that can be required by browserify', function() {
         var js = '';
 

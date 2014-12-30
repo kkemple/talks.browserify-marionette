@@ -1,0 +1,14 @@
+{
+    "glob": [
+        "grunt-tasks/**",
+        "js/**",
+        "sass/**",
+        "partials/**",
+        "readme.md",
+        "index.html",
+        "Gruntfile.js",
+        "package.json",
+        "bower.json"
+    ],
+    "github": true
+}

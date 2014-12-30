@@ -7,7 +7,7 @@ var Marionette = require('../libs/marionette'),
 /**
  * The view that holds all slide views, really just an organization wrapper
  */
-Presentation = Marionette.CollectionView.extend({
+Presentation = Marionette.CompositeView.extend({
     template: require('../../partials/presentation.hbs'),
     className: 'presentation',
     childView: Slide,
