@@ -1,0 +1,21 @@
+<!DOCTYPE html><html lang="en"><head><title>app</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="app"><meta name="groc-project-path" content="js/app.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/app.js">js/app.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-pi">'use strict'</span>;
+
+<span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./libs/marionette'</span>),
+    Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./libs/backbone'</span>),
+    app;</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p><span class='doc-section-header'> of type <em>Marionette</em></span></p>
+<p>Create the application instance</p></div></div><div class="code"><div class="wrapper">app = <span class="hljs-keyword">new</span> Marionette.Application({
+    regions: {
+        mainRegion: <span class="hljs-string">'#app'</span>
+    }
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Here is where all app configuration should go
+Like app level event channels or app handlers</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create the main router for the application</p></div></div><div class="code"><div class="wrapper">app.router = <span class="hljs-keyword">new</span> Backbone.Router();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create handler for setting page title</p></div></div><div class="code"><div class="wrapper">app.commands.setHandler(<span class="hljs-string">'setTitle'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(title)</span> {</span>
+    document.title = document.title + <span class="hljs-string">' - '</span> + title;
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create handler for updating url, calling controller method if specified</p></div></div><div class="code"><div class="wrapper">app.commands.setHandler(<span class="hljs-string">'navigate'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(opts)</span> {</span>
+    app.router.navigate(opts.path, opts.trigger || <span class="hljs-literal">false</span>)
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Once the app is started all routers must be instantiated, start Backbone.history</p></div></div><div class="code"><div class="wrapper">app.on(<span class="hljs-string">'start'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">if</span> (Backbone.history) {
+        Backbone.history.start();
+    }
+});
+
+module.exports = app;</div></div></div></div></body></html>

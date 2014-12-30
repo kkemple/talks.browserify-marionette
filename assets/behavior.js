@@ -29,23 +29,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "type": "file",
       "data": {
         "language": {
-          "nameMatchers": [".json"],
-          "pygmentsLexer": "json",
-          "codeOnly": true,
-          "name": "JSON"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/bower.json",
-        "projectPath": "bower.json",
-        "targetPath": "bower",
-        "pageTitle": "bower",
-        "title": "bower"
-      },
-      "depth": 1,
-      "outline": []
-    }, {
-      "type": "file",
-      "data": {
-        "language": {
           "nameMatchers": [".js"],
           "pygmentsLexer": "javascript",
           "multiLineComment": ["/*", "*", "*/"],
@@ -54,59 +37,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/browserify.js",
-        "projectPath": "grunt-tasks/browserify.js",
-        "targetPath": "browserify",
-        "pageTitle": "browserify",
-        "title": "browserify"
-      },
-      "depth": 1,
-      "outline": []
-    }, {
-      "type": "file",
-      "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/clean.js",
-        "projectPath": "grunt-tasks/clean.js",
-        "targetPath": "clean",
-        "pageTitle": "clean",
-        "title": "clean"
-      },
-      "depth": 1,
-      "outline": []
-    }, {
-      "type": "file",
-      "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/copy.js",
-        "projectPath": "grunt-tasks/copy.js",
-        "targetPath": "copy",
-        "pageTitle": "copy",
-        "title": "copy"
+        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/app.js",
+        "projectPath": "js/app.js",
+        "targetPath": "app",
+        "pageTitle": "app",
+        "title": "app"
       },
       "depth": 1,
       "outline": []
     }, {
       "type": "folder",
       "data": {
-        "path": "js",
-        "title": "js"
+        "path": "collections",
+        "title": "collections"
       },
       "depth": 1,
       "children": [
@@ -122,267 +65,87 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/app.js",
-            "projectPath": "js/app.js",
-            "targetPath": "js/app",
-            "pageTitle": "js/app",
-            "title": "app"
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/collections/slides.js",
+            "projectPath": "js/collections/slides.js",
+            "targetPath": "collections/slides",
+            "pageTitle": "collections/slides",
+            "title": "slides"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "config",
+        "title": "config"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/events.js",
+            "projectPath": "js/config/events.js",
+            "targetPath": "config/events",
+            "pageTitle": "config/events",
+            "title": "events"
           },
           "depth": 2,
           "outline": []
         }, {
-          "type": "folder",
+          "type": "file",
           "data": {
-            "path": "js/collections",
-            "title": "collections"
+            "language": {
+              "nameMatchers": [".md", ".markdown", ".mkd", ".mkdn", ".mdown"],
+              "commentsOnly": true,
+              "name": "Markdown"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/readme.md",
+            "projectPath": "js/config/readme.md",
+            "targetPath": "config/readme",
+            "pageTitle": "config/readme",
+            "title": "readme"
           },
           "depth": 2,
-          "children": [
+          "outline": [
             {
-              "type": "file",
+              "type": "heading",
               "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/collections/slides.js",
-                "projectPath": "js/collections/slides.js",
-                "targetPath": "js/collections/slides",
-                "pageTitle": "js/collections/slides",
-                "title": "slides"
+                "level": 2,
+                "title": "Config",
+                "slug": "config"
               },
-              "depth": 3,
-              "outline": []
-            }
-          ]
-        }, {
-          "type": "folder",
-          "data": {
-            "path": "js/config",
-            "title": "config"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".md", ".markdown", ".mkd", ".mkdn", ".mdown"],
-                  "commentsOnly": true,
-                  "name": "Markdown"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/readme.md",
-                "projectPath": "js/config/readme.md",
-                "targetPath": "js/config/readme",
-                "pageTitle": "js/config/readme",
-                "title": "readme"
-              },
-              "depth": 3,
-              "outline": [
+              "depth": 2,
+              "children": [
                 {
                   "type": "heading",
                   "data": {
-                    "level": 2,
-                    "title": "Config",
-                    "slug": "config"
+                    "level": 3,
+                    "title": "templates/",
+                    "slug": "templates"
                   },
-                  "depth": 2,
-                  "children": [
-                    {
-                      "type": "heading",
-                      "data": {
-                        "level": 3,
-                        "title": "templates/",
-                        "slug": "templates"
-                      },
-                      "depth": 3
-                    }, {
-                      "type": "heading",
-                      "data": {
-                        "level": 3,
-                        "title": "slides.js",
-                        "slug": "slidesjs"
-                      },
-                      "depth": 3
-                    }
-                  ]
-                }
-              ]
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/slides.js",
-                "projectPath": "js/config/slides.js",
-                "targetPath": "js/config/slides",
-                "pageTitle": "js/config/slides",
-                "title": "slides"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "folder",
-              "data": {
-                "path": "js/config/templates",
-                "title": "templates"
-              },
-              "depth": 3,
-              "children": [
-                {
-                  "type": "file",
+                  "depth": 3
+                }, {
+                  "type": "heading",
                   "data": {
-                    "language": {
-                      "nameMatchers": [".js"],
-                      "pygmentsLexer": "javascript",
-                      "multiLineComment": ["/*", "*", "*/"],
-                      "singleLineComment": ["//"],
-                      "ignorePrefix": "}",
-                      "foldPrefix": "^",
-                      "name": "JavaScript"
-                    },
-                    "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/templates/index.js",
-                    "projectPath": "js/config/templates/index.js",
-                    "targetPath": "js/config/templates/index",
-                    "pageTitle": "js/config/templates/index",
-                    "title": "index"
+                    "level": 3,
+                    "title": "slides.js",
+                    "slug": "slidesjs"
                   },
-                  "depth": 4,
-                  "outline": []
+                  "depth": 3
                 }
               ]
-            }
-          ]
-        }, {
-          "type": "folder",
-          "data": {
-            "path": "js/controllers",
-            "title": "controllers"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/controllers/presentation.js",
-                "projectPath": "js/controllers/presentation.js",
-                "targetPath": "js/controllers/presentation",
-                "pageTitle": "js/controllers/presentation",
-                "title": "presentation"
-              },
-              "depth": 3,
-              "outline": []
-            }
-          ]
-        }, {
-          "type": "folder",
-          "data": {
-            "path": "js/libs",
-            "title": "libs"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/backbone.js",
-                "projectPath": "js/libs/backbone.js",
-                "targetPath": "js/libs/backbone",
-                "pageTitle": "js/libs/backbone",
-                "title": "backbone"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/jquery.js",
-                "projectPath": "js/libs/jquery.js",
-                "targetPath": "js/libs/jquery",
-                "pageTitle": "js/libs/jquery",
-                "title": "jquery"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/marionette.js",
-                "projectPath": "js/libs/marionette.js",
-                "targetPath": "js/libs/marionette",
-                "pageTitle": "js/libs/marionette",
-                "title": "marionette"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/underscore.js",
-                "projectPath": "js/libs/underscore.js",
-                "targetPath": "js/libs/underscore",
-                "pageTitle": "js/libs/underscore",
-                "title": "underscore"
-              },
-              "depth": 3,
-              "outline": []
             }
           ]
         }, {
@@ -397,19 +160,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/main.js",
-            "projectPath": "js/main.js",
-            "targetPath": "js/main",
-            "pageTitle": "js/main",
-            "title": "main"
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/slides.js",
+            "projectPath": "js/config/slides.js",
+            "targetPath": "config/slides",
+            "pageTitle": "config/slides",
+            "title": "slides"
           },
           "depth": 2,
           "outline": []
         }, {
           "type": "folder",
           "data": {
-            "path": "js/models",
-            "title": "models"
+            "path": "config/templates",
+            "title": "templates"
           },
           "depth": 2,
           "children": [
@@ -425,96 +188,46 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "JavaScript"
                 },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/slide.js",
-                "projectPath": "js/models/slide.js",
-                "targetPath": "js/models/slide",
-                "pageTitle": "js/models/slide",
-                "title": "slide"
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/templates/index.js",
+                "projectPath": "js/config/templates/index.js",
+                "targetPath": "config/templates/index",
+                "pageTitle": "config/templates/index",
+                "title": "index"
               },
               "depth": 3,
               "outline": []
             }
           ]
-        }, {
-          "type": "folder",
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "controllers",
+        "title": "controllers"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
           "data": {
-            "path": "js/routes",
-            "title": "routes"
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/controllers/presentation.js",
+            "projectPath": "js/controllers/presentation.js",
+            "targetPath": "controllers/presentation",
+            "pageTitle": "controllers/presentation",
+            "title": "presentation"
           },
           "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/routes/presentation.js",
-                "projectPath": "js/routes/presentation.js",
-                "targetPath": "js/routes/presentation",
-                "pageTitle": "js/routes/presentation",
-                "title": "presentation"
-              },
-              "depth": 3,
-              "outline": []
-            }
-          ]
-        }, {
-          "type": "folder",
-          "data": {
-            "path": "js/views",
-            "title": "views"
-          },
-          "depth": 2,
-          "children": [
-            {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/views/presentation.js",
-                "projectPath": "js/views/presentation.js",
-                "targetPath": "js/views/presentation",
-                "pageTitle": "js/views/presentation",
-                "title": "presentation"
-              },
-              "depth": 3,
-              "outline": []
-            }, {
-              "type": "file",
-              "data": {
-                "language": {
-                  "nameMatchers": [".js"],
-                  "pygmentsLexer": "javascript",
-                  "multiLineComment": ["/*", "*", "*/"],
-                  "singleLineComment": ["//"],
-                  "ignorePrefix": "}",
-                  "foldPrefix": "^",
-                  "name": "JavaScript"
-                },
-                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/views/slide.js",
-                "projectPath": "js/views/slide.js",
-                "targetPath": "js/views/slide",
-                "pageTitle": "js/views/slide",
-                "title": "slide"
-              },
-              "depth": 3,
-              "outline": []
-            }
-          ]
+          "outline": []
         }
       ]
     }, {
@@ -529,31 +242,44 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/jshint.js",
-        "projectPath": "grunt-tasks/jshint.js",
-        "targetPath": "jshint",
-        "pageTitle": "jshint",
-        "title": "jshint"
+        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/main.js",
+        "projectPath": "js/main.js",
+        "targetPath": "main",
+        "pageTitle": "main",
+        "title": "main"
       },
       "depth": 1,
       "outline": []
     }, {
-      "type": "file",
+      "type": "folder",
       "data": {
-        "language": {
-          "nameMatchers": [".json"],
-          "pygmentsLexer": "json",
-          "codeOnly": true,
-          "name": "JSON"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/package.json",
-        "projectPath": "package.json",
-        "targetPath": "package",
-        "pageTitle": "package",
-        "title": "package"
+        "path": "models",
+        "title": "models"
       },
       "depth": 1,
-      "outline": []
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/slide.js",
+            "projectPath": "js/models/slide.js",
+            "targetPath": "models/slide",
+            "pageTitle": "models/slide",
+            "title": "slide"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
     }, {
       "type": "folder",
       "data": {
@@ -827,25 +553,42 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         }
       ]
     }, {
-      "type": "file",
+      "type": "folder",
       "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/sass.js",
-        "projectPath": "grunt-tasks/sass.js",
-        "targetPath": "sass",
-        "pageTitle": "sass",
+        "path": "routes",
+        "title": "routes"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/routes/presentation.js",
+            "projectPath": "js/routes/presentation.js",
+            "targetPath": "routes/presentation",
+            "pageTitle": "routes/presentation",
+            "title": "presentation"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "sass",
         "title": "sass"
       },
       "depth": 1,
-      "outline": [],
       "children": [
         {
           "type": "file",
@@ -1338,45 +1081,55 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
         }
       ]
     }, {
-      "type": "file",
+      "type": "folder",
       "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/uglify.js",
-        "projectPath": "grunt-tasks/uglify.js",
-        "targetPath": "uglify",
-        "pageTitle": "uglify",
-        "title": "uglify"
+        "path": "views",
+        "title": "views"
       },
       "depth": 1,
-      "outline": []
-    }, {
-      "type": "file",
-      "data": {
-        "language": {
-          "nameMatchers": [".js"],
-          "pygmentsLexer": "javascript",
-          "multiLineComment": ["/*", "*", "*/"],
-          "singleLineComment": ["//"],
-          "ignorePrefix": "}",
-          "foldPrefix": "^",
-          "name": "JavaScript"
-        },
-        "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/grunt-tasks/watch.js",
-        "projectPath": "grunt-tasks/watch.js",
-        "targetPath": "watch",
-        "pageTitle": "watch",
-        "title": "watch"
-      },
-      "depth": 1,
-      "outline": []
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/views/presentation.js",
+            "projectPath": "js/views/presentation.js",
+            "targetPath": "views/presentation",
+            "pageTitle": "views/presentation",
+            "title": "presentation"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/views/slide.js",
+            "projectPath": "js/views/slide.js",
+            "targetPath": "views/slide",
+            "pageTitle": "views/slide",
+            "title": "slide"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
     }
   ];
 
