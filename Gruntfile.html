@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>Gruntfile</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="Gruntfile"><meta name="groc-project-path" content="Gruntfile.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/Gruntfile.js">Gruntfile.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+module.exports = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(grunt)</span> {</span>
+<span class="hljs-pi">    "use strict"</span>;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Use <code>load-grunt-config</code> plugin to load task config dynamicly</p></div></div><div class="code"><div class="wrapper">    <span class="hljs-built_in">require</span>(<span class="hljs-string">'load-grunt-config'</span>)(grunt, {
+        configPath: path.join(__dirname, <span class="hljs-string">'grunt-tasks'</span>),
+        loadGruntTasks: {
+            config: <span class="hljs-built_in">require</span>(<span class="hljs-string">'./package.json'</span>),
+        }
+    });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>only test the quality of the code</p></div></div><div class="code"><div class="wrapper">    grunt.registerTask(<span class="hljs-string">'test'</span>, [<span class="hljs-string">'jshint'</span>, <span class="hljs-comment">/*'jasmine'*/</span>]);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>build the app output</p></div></div><div class="code"><div class="wrapper">    grunt.registerTask(<span class="hljs-string">'build'</span>, [<span class="hljs-string">'test'</span>, <span class="hljs-string">'clean'</span>,  <span class="hljs-string">'copy'</span>, <span class="hljs-string">'templates'</span>, <span class="hljs-string">'sass'</span>, <span class="hljs-string">'uglify'</span>, <span class="hljs-string">'browserify'</span>]);</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Custom grunt task to automagically require all templates for the slides
+Reads all files in slides dir and adds the template function to the module exports object
+See &#39;js/config/readme.md&#39; for more info</p></div></div><div class="code"><div class="wrapper">    grunt.registerTask(<span class="hljs-string">'templates'</span>, <span class="hljs-string">'builds a templates js file that can be required by browserify'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">var</span> js = <span class="hljs-string">''</span>;
+
+        grunt.file.recurse(<span class="hljs-string">'partials/slides/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(abspath, rootdir, subdir, filename)</span> {</span>
+            <span class="hljs-keyword">var</span> file = filename.replace(<span class="hljs-string">'.hbs'</span>, <span class="hljs-string">''</span>);
+            js += <span class="hljs-string">'module.exports.'</span> +
+                    file +
+                    <span class="hljs-string">' = require(\'../../../partials/slides/'</span> +
+                    file +
+                    <span class="hljs-string">'.hbs\');'</span> +
+                    <span class="hljs-string">'\n'</span>;
+        });
+
+        grunt.file.write(<span class="hljs-string">'js/config/templates/index.js'</span>, js);
+    });
+};</div></div></div></div></body></html>

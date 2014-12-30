@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>watch</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="watch"><meta name="groc-project-path" content="grunt-tasks/watch.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/grunt-tasks/watch.js">grunt-tasks/watch.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">module.exports = {
+    options: {
+        livereload: <span class="hljs-literal">true</span>,
+        debounceDelay: <span class="hljs-number">250</span>
+    },
+    scripts: {
+        files: [<span class="hljs-string">'js/**/*.js'</span>],
+        tasks: [<span class="hljs-string">'jshint'</span>, <span class="hljs-string">'browserify'</span>]
+    },
+    sass: {
+        files: [<span class="hljs-string">'sass/**/*.scss'</span>],
+        tasks: [<span class="hljs-string">'sass'</span>]
+    },
+    templates: {
+        files: [<span class="hljs-string">'partials/slides/*.hbs'</span>],
+        tasks: [<span class="hljs-string">'templates'</span>]
+    },
+    img: {
+        files: [<span class="hljs-string">'img/**'</span>],
+        tasks: [<span class="hljs-string">'build'</span>]
+    },
+    index: {
+        files: [<span class="hljs-string">'index.html'</span>],
+        tasks: [<span class="hljs-string">'build'</span>]
+    }
+};</div></div></div></div></body></html>

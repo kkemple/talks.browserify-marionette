@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><title>js/models/slide</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="js/models/slide"><meta name="groc-project-path" content="js/models/slide.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/models/slide.js">js/models/slide.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-pi">'use strict'</span>;
+
+<span class="hljs-keyword">var</span> Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/backbone'</span>),
+    Slide;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The model backing each slide</p></div></div><div class="code"><div class="wrapper">Slide = Backbone.Model.extend({
+    template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../partials/slide.hbs'</span>),
+    defaults: {
+        active: <span class="hljs-literal">false</span>,
+        steps: <span class="hljs-number">0</span>,
+        index: <span class="hljs-number">0</span>,
+        titleSlide: <span class="hljs-literal">false</span>,
+        imageSlide: <span class="hljs-literal">false</span>
+    },</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving forward</p>
+<p><strong>Returns a Boolean</strong></p></div></div><div class="code"><div class="wrapper">    canStepForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) &lt; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>);
+    },</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving backward</p>
+<p><strong>Returns a Boolean</strong></p></div></div><div class="code"><div class="wrapper">    canStepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) &gt; <span class="hljs-number">0</span>;
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Updates the model&#39;s <code>index</code> by incrementing</p></div></div><div class="code"><div class="wrapper">    stepForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'index'</span>, <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) + <span class="hljs-number">1</span>);
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Updates the model&#39;s <code>index</code> by de-incrementing</p></div></div><div class="code"><div class="wrapper">    stepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'index'</span>, <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) - <span class="hljs-number">1</span>);
+    }
+});
+
+module.exports = Slide;</div></div></div></div></body></html>

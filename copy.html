@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>copy</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="copy"><meta name="groc-project-path" content="grunt-tasks/copy.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/grunt-tasks/copy.js">grunt-tasks/copy.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">module.exports = {
+    <span class="hljs-string">'index.html'</span>: {
+        src: <span class="hljs-string">'index.html'</span>,
+        dest: <span class="hljs-string">'dist/index.html'</span>
+    },
+    img: {
+        expand: <span class="hljs-literal">true</span>,
+        cwd: <span class="hljs-string">'img/'</span>,
+        src: [<span class="hljs-string">'**'</span>],
+        dest: <span class="hljs-string">'dist/img/'</span>
+    },
+    fonts:  {
+        expand: <span class="hljs-literal">true</span>,
+        cwd: <span class="hljs-string">'fonts/'</span>,
+        src: [<span class="hljs-string">'**'</span>],
+        dest: <span class="hljs-string">'dist/fonts/'</span>
+    },
+    <span class="hljs-string">'normalize.css'</span>: {
+        src: <span class="hljs-string">'libs/normalize.css/normalize.css'</span>,
+        dest: <span class="hljs-string">'dist/css/normalize.css'</span>
+    },
+    <span class="hljs-string">'hljs.css'</span>: {
+        src: <span class="hljs-string">'node_modules/highlight.js/styles/tomorrow.css'</span>,
+        dest: <span class="hljs-string">'dist/css/highlightjs-tomorrow-theme.css'</span>
+    }
+};</div></div></div></div></body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><title>sass/app</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="sass/app"><meta name="groc-project-path" content="sass/app.scss"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/sass/app.scss">sass/app.scss</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"normalize.css"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"highlightjs-tomorrow-theme.css"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"font-awesome/font-awesome"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"fonts"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"globals"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"mixins"</span>;</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"slide"</span>;</span>
+
+<span class="hljs-tag">body</span> {
+    <span class="hljs-attribute">background-color</span><span class="hljs-value">: $body-bg;</span>
+    <span class="hljs-attribute">color</span><span class="hljs-value">: $text;</span>
+    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">4</span>px <span class="hljs-number">4</span>px <span class="hljs-number">0</span> <span class="hljs-hexcolor">#bdc3c7</span>;</span>
+    <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">'montserratbold'</span>;</span>
+}
+
+<span class="hljs-id">#app</span> {
+    <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">100</span>vw;</span>
+    <span class="hljs-attribute">height</span><span class="hljs-value">: <span class="hljs-number">100</span>vh;</span>
+
+    <span class="hljs-class">.presentation</span> {
+        <span class="hljs-attribute">width</span><span class="hljs-value">: inherit;</span>
+        <span class="hljs-attribute">height</span><span class="hljs-value">: inherit;</span>
+        <span class="hljs-attribute">display</span><span class="hljs-value">: flex;</span>
+
+        <span class="hljs-class">.slides</span> {
+            <span class="hljs-attribute">width</span><span class="hljs-value">: inherit;</span>
+            <span class="hljs-attribute">height</span><span class="hljs-value">: inherit;</span>
+            <span class="hljs-attribute">margin</span><span class="hljs-value">: auto;</span>
+
+            <span class="hljs-class">.slide</span> {
+                <span class="hljs-attribute">width</span><span class="hljs-value">: inherit;</span>
+                <span class="hljs-attribute">height</span><span class="hljs-value">: inherit;</span>
+                <span class="hljs-attribute">display</span><span class="hljs-value">: none;</span>
+                <span class="hljs-attribute">flex-direction</span><span class="hljs-value">: column;</span>
+
+                &amp;<span class="hljs-class">.title-slide</span> {
+                    <span class="hljs-attribute">background-color</span><span class="hljs-value">: $title-slide-bg;</span>
+                    <span class="hljs-attribute">color</span><span class="hljs-value">: $title-slide-text;</span>
+                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">6</span>px <span class="hljs-number">6</span>px <span class="hljs-number">0</span> <span class="hljs-hexcolor">#c0392b</span>;</span>
+                }
+
+                &amp;<span class="hljs-class">.active</span> {
+                    <span class="hljs-attribute">display</span><span class="hljs-value">: flex;</span>
+                }
+
+                &gt; * {
+                    <span class="hljs-attribute">margin</span><span class="hljs-value">: auto;</span>
+                    <span class="hljs-attribute">align-items</span><span class="hljs-value">: center;</span>
+                }
+
+                <span class="hljs-tag">h1</span> {
+                    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">6</span>vw;</span>
+                    <span class="hljs-attribute">text-align</span><span class="hljs-value">: center;</span>
+                }
+
+                <span class="hljs-class">.steps</span> {
+                    <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
+                    <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
+                    <span class="hljs-attribute">list-style</span><span class="hljs-value">: none;</span>
+                    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">5</span>vw;</span>
+                    <span class="hljs-attribute">text-align</span><span class="hljs-value">: center;</span>
+
+                    <span class="hljs-tag">li</span> {
+                        <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">3</span>vh;</span>
+                    }
+                }
+
+                <span class="hljs-tag">pre</span> {
+
+                    <span class="hljs-tag">code</span> {
+                        <span class="hljs-attribute">display</span><span class="hljs-value">: block;</span>
+                        <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">2</span>vw;</span>
+                        <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: none;</span>
+                        <span class="hljs-attribute">background-color</span><span class="hljs-value">: transparent <span class="hljs-important">!important</span>;</span>
+                    }
+                }
+
+                <span class="hljs-tag">img</span> {
+                    <span class="hljs-attribute">max-width</span><span class="hljs-value">: <span class="hljs-number">60</span>vw;</span>
+                }
+            }
+        }
+    }
+}</div></div></div></div></body></html>
