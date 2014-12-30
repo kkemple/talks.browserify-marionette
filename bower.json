@@ -1,0 +1,13 @@
+{
+  "name": "browserify-marionette",
+  "version": "0.0.0",
+  "authors": [
+    "Kurtis Kemple <kurtiskemple@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "marionette": "~2.3.0",
+    "normalize.css": "~3.0.2"
+  }
+}

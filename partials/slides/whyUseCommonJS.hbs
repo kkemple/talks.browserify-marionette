@@ -1,0 +1,19 @@
+<h1>CommonJS Style Modules</h1>
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+var Marionette = require('./libs/marionette'),
+    app;
+
+app = new Marionette.Application({
+    regions: {
+        mainRegion: '#app'
+    }
+});
+
+// handle any app configuration
+
+module.exports = app;
+        </code>
+    </pre>
+</div>

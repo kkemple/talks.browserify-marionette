@@ -1,0 +1,6 @@
+{
+    "debug": true,
+    "browserify": true,
+    "jasmine": true,
+    "node": true
+}

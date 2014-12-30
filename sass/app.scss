@@ -1,0 +1,84 @@
+@import "normalize.css";
+@import "highlightjs-tomorrow-theme.css";
+@import "font-awesome/font-awesome";
+@import "fonts";
+@import "globals";
+@import "mixins";
+@import "slide";
+
+body {
+    background-color: $body-bg;
+    color: $text;
+    text-shadow: 4px 4px 0 #bdc3c7;
+    font-family: 'montserratbold';
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+
+    .presentation {
+        width: inherit;
+        height: inherit;
+        display: flex;
+
+        .slides {
+            width: inherit;
+            height: inherit;
+            margin: auto;
+
+            .slide {
+                width: inherit;
+                height: inherit;
+                display: none;
+                flex-direction: column;
+
+                &.title-slide {
+                    background-color: $title-slide-bg;
+                    color: $title-slide-text;
+                    text-shadow: 6px 6px 0 #c0392b;
+                }
+
+                &.active {
+                    display: flex;
+                }
+
+                > * {
+                    margin: auto;
+                    align-items: center;
+                }
+
+                h1 {
+                    font-size: 6vw;
+                    text-align: center;
+                }
+
+                .steps {
+                    margin-top: 0;
+                    padding: 0;
+                    list-style: none;
+                    font-size: 5vw;
+                    text-align: center;
+
+                    li {
+                        margin-bottom: 3vh;
+                    }
+                }
+
+                pre {
+
+                    code {
+                        display: block;
+                        font-size: 2vw;
+                        text-shadow: none;
+                        background-color: transparent !important;
+                    }
+                }
+
+                img {
+                    max-width: 60vw;
+                }
+            }
+        }
+    }
+}

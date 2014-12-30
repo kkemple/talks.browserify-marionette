@@ -1,0 +1,5 @@
+node_modules
+libs
+dist
+.sass-cache
+*.DS_Store

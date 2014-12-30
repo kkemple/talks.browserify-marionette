@@ -1,0 +1,44 @@
+{
+  "name": "browserify-marionette",
+  "version": "0.0.0",
+  "description": "A slide-show presentation about using browserify in marionette projects",
+  "main": "index.html",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kkemple/browserify-marionette.git"
+  },
+  "keywords": [
+    "browserify",
+    "marionette",
+    "presentation",
+    "slideshow",
+    "example",
+    "talk"
+  ],
+  "author": "kurtiskemple@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kkemple/browserify-marionette/issues"
+  },
+  "homepage": "https://github.com/kkemple/browserify-marionette",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-browserify": "~3.2.1",
+    "grunt-contrib-uglify": "~0.6.0",
+    "grunt-contrib-clean": "~0.6.0",
+    "load-grunt-config": "~0.16.0",
+    "grunt-contrib-copy": "~0.7.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "hbsfy": "~2.2.1"
+  },
+  "dependencies": {
+    "browserify": "~8.0.1",
+    "handlebars": "~2.0.0",
+    "highlight.js": "~8.4.0"
+  }
+}
