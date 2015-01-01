@@ -18,9 +18,12 @@ module.exports = [
     { id: 'gettingSetUpShimmingGlobals', title: 'Browserify + Marionette - Shimming Globals' },
     { id: 'gettingSetUpUnderstandingTransforms', title: 'Browserify + Marionette - Understanding Transforms' },
     { id: 'marionette', title: 'Browserify + Marionette - Adding Marionette To the Mix', titleSlide: true },
+    { id: 'marionetteConfigInit', title: 'Browserify + Marionette - Configuration and Initialization', titleSlide: true },
     { id: 'marionetteAppConfig', title: 'Browserify + Marionette - Configuring Your Marionette App' },
     { id: 'marionetteAppStart', title: 'Browserify + Marionette - Starting Your Marionette App' },
-    { id: 'marionetteKeepThingsSmall', title: 'Browserify + Marionette - Keep Things Small' },
+    { id: 'marionetteKeepThingsSmallTitle', title: 'Browserify + Marionette - Keep Things Small', titleSlide: true },
+    { id: 'marionetteKeepThingsSmall', title: 'Browserify + Marionette - Keep Things Small Example' },
+    { id: 'marionetteWorkingWithTemplates', title: 'Browserify + Marionette - Making Templates Faster + Easier', titleSlide: true },
     { id: 'marionetteTemplates1', title: 'Browserify + Marionette - Pre-compiling Templates - 1' },
     { id: 'marionetteTemplates2', title: 'Browserify + Marionette - Pre-compiling Templates - 2' },
 ];
