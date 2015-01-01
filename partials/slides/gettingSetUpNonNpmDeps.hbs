@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* Gruntfile.json */
+
+grunt.initConfig({
+    uglify: {
+        dependencies: {
+            files: {
+                   'dist/js/dependencies.min.js': [
+                       'libs/underscore/underscore.js',
+                       'libs/jquery/dist/jquery.js',
+                       'libs/backbone/backbone.js',
+                       'libs/marionette/lib/backbone.marionette.js'
+                   ]
+               }
+            }
+        }
+    },
+...
+        </code>
+    </pre>
+</div>

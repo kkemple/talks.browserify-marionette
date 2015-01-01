@@ -2,6 +2,7 @@
 
 var Slide = require('../models/slide'),
     Backbone = require('../libs/backbone'),
+    vent = require('../config/events'),
     Slides;
 
 /**
@@ -24,7 +25,6 @@ Slides = Backbone.Collection.extend({
         var slide;
 
         slide = this.findWhere({ active: true });
-        if (!slide) return;
         if (slide.canStepForward()) {
             slide.stepForward();
             return;
@@ -32,7 +32,7 @@ Slides = Backbone.Collection.extend({
 
         if (this.index === this.length - 1) return;
         slide.set('active', false);
-        this.at(++this.index).set('active', true);
+        this.setActiveSlide(++this.index);
     },
 
     /**
@@ -44,7 +44,6 @@ Slides = Backbone.Collection.extend({
         var slide;
 
         slide = this.findWhere({ active: true });
-        if (!slide) return;
         if (slide.canStepBackward()) {
             slide.stepBackward();
             return;
@@ -52,7 +51,7 @@ Slides = Backbone.Collection.extend({
 
         if (this.index === 0) return;
         slide.set('active', false);
-        this.at(--this.index).set('active', true);
+        this.setActiveSlide(--this.index);
     },
 
     /**
@@ -62,13 +61,32 @@ Slides = Backbone.Collection.extend({
     stepTo: function(index) {
         var slide;
 
+
+        if (typeof index !== 'number' ||
+                index > this.length ||
+                index < 1) {
+
+            vent.trigger('app:navigate', 'slides/' + (this.index + 1));
+            return;
+        }
+        --index;
         if (index === this.index) return;
         slide = this.findWhere({ active: true });
-        if (!slide) return;
-
-        slide.set('active', false);
-        this.at(index).set('active', true);
         this.index = index;
+        slide.set('active', false);
+        this.at(this.index).set('active', true);
+    },
+
+    /**
+     * Responsible for setting the active slide and then
+     * firing related app events
+     */
+    setActiveSlide: function(index) {
+        var slide = this.at(index);
+
+        slide.set('active', true);
+        vent.trigger('app:navigate', 'slides/' + (this.index + 1));
+        vent.trigger('app:setTitle', slide.get('title'));
     }
 });
 

@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* Gruntfile.json */
+
+grunt.initConfig({
+    browserify: {
+        app: {
+            files: {
+                'dist/js/app.js': ['js/**/*.js']
+            },
+            options: {
+                transform: ["hbsfy"],
+                browserifyOptions: {
+                    debug: true
+                }
+            }
+        }
+    },
+...
+        </code>
+    </pre>
+</div>

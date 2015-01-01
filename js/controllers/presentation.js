@@ -1,11 +1,19 @@
 'use strict';
 
-var vent = require('../config/events'),
-    Marionette = require('../libs/marionette'),
+var Marionette = require('../libs/marionette'),
+    reqres = require('../config/reqres'),
     PresentationController;
 
-PresentationController = Marionette.Controller.extend({
-
+/**
+ * Simple controller for our presentation router
+ */
+PresentationController = Marionette.Object.extend({
+    initialize: function() {
+        this.slides = reqres.request('slides');
+    },
+    stepTo: function(id) {
+        this.slides.stepTo(parseInt(id, 10));
+    }
 });
 
 module.exports = PresentationController;

@@ -1,6 +1,7 @@
 {
     "glob": [
         "js/**",
+        "!js/libs",
         "sass/**",
         "partials/**",
         "readme.md",

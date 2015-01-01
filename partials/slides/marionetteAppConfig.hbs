@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* js/app.js */
+
+var Marionette = require('./libs/marionette'),
+    Backbone = require('./libs/backbone'),
+    vent = require('./config/events'),
+    app;
+
+app = new Marionette.Application({
+    regions: {
+        mainRegion: '#app'
+    }
+});
+app.router = new Backbone.Router();
+vent.on('app:navigate', function(path, trigger) { ... });
+app.on('start', function() { Backbone.history.start(); });
+
+module.exports = app;
+        </code>
+    </pre>
+</div>

@@ -1,0 +1,25 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+
+/* js/main.js */
+
+var app = require('./app'),
+    Slides = require('./collections/slides'),
+    slidesConfig = require('./config/slides'),
+    Presentation = require('./views/presentation'),
+    reqres = require('./config/reqres'),
+    slides,
+    presentation;
+
+slides = new Slides(slidesConfig);
+presentation = new Presentation({ collection: slides });
+reqres.setHandler('slides', function() { return slides; });
+app.addInitializer(function() { app.mainRegion.show(presentation); });
+
+// Finally, start the app
+app.start();
+
+        </code>
+    </pre>
+</div>

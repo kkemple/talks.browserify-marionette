@@ -1,0 +1,24 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* Gruntfile.json */
+
+grunt.initConfig({
+    browserify: {
+
+        // tells Browserify to transform all
+        // .hbs files into functions
+        transform: ["hbsfy"],
+        ...
+    },
+...
+
+/* js/views/presentation.js */
+
+// we can then just require the handlebars function for our template
+var Presentation = Marionette.CompositeView.extend({
+    template: require('../../partials/presentation.hbs'),
+...
+        </code>
+    </pre>
+</div>

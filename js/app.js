@@ -2,41 +2,36 @@
 
 var Marionette = require('./libs/marionette'),
     Backbone = require('./libs/backbone'),
+    vent = require('./config/events'),
     app;
 
 
-/**
- * Create the application instance
- * @type {Marionette}
- */
+// Create the application instance
 app = new Marionette.Application({
     regions: {
         mainRegion: '#app'
     }
 });
 
-/**
- * Here is where all app configuration should go
- * Like app level event channels or app handlers
- */
-
 // Create the main router for the application
 app.router = new Backbone.Router();
 
-// Create handler for setting page title
-app.commands.setHandler('setTitle', function(title) {
-    document.title = document.title + ' - ' + title;
+// add a listener for the `app:setTitle` event
+vent.on('app:setTitle', function(title) {
+    document.title = title;
 });
 
-// Create handler for updating url, calling controller method if specified
-app.commands.setHandler('navigate', function(opts) {
-    app.router.navigate(opts.path, opts.trigger || false)
+// add a listener for the `app:navigate` event
+vent.on('app:navigate', function(path, trigger) {
+    app.router.navigate(path, { trigger: (trigger || false) });
 });
 
 // Once the app is started all routers must be instantiated, start Backbone.history
 app.on('start', function() {
-    if (Backbone.history) {
-        Backbone.history.start();
+    Backbone.history.start({ root: '/dist/index.html' });
+
+    if (Backbone.history.fragment === '') {
+        app.router.navigate('slides/1');
     }
 });
 
