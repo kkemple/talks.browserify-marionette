@@ -2,20 +2,15 @@
 
 <span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./libs/marionette'</span>),
     Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./libs/backbone'</span>),
-    app;</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p><span class='doc-section-header'> of type <em>Marionette</em></span></p>
-<p>Create the application instance</p></div></div><div class="code"><div class="wrapper">app = <span class="hljs-keyword">new</span> Marionette.Application({
+    vent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config/events'</span>),
+    app;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create the application instance</p></div></div><div class="code"><div class="wrapper">app = <span class="hljs-keyword">new</span> Marionette.Application({
     regions: {
         mainRegion: <span class="hljs-string">'#app'</span>
     }
-});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Here is where all app configuration should go
-Like app level event channels or app handlers</p></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create the main router for the application</p></div></div><div class="code"><div class="wrapper">app.router = <span class="hljs-keyword">new</span> Backbone.Router();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create handler for setting page title</p></div></div><div class="code"><div class="wrapper">app.commands.setHandler(<span class="hljs-string">'setTitle'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(title)</span> {</span>
-    document.title = document.title + <span class="hljs-string">' - '</span> + title;
-});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create handler for updating url, calling controller method if specified</p></div></div><div class="code"><div class="wrapper">app.commands.setHandler(<span class="hljs-string">'navigate'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(opts)</span> {</span>
-    app.router.navigate(opts.path, opts.trigger || <span class="hljs-literal">false</span>)
-});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Once the app is started all routers must be instantiated, start Backbone.history</p></div></div><div class="code"><div class="wrapper">app.on(<span class="hljs-string">'start'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-    <span class="hljs-keyword">if</span> (Backbone.history) {
-        Backbone.history.start();
-    }
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Create the main router for the application</p></div></div><div class="code"><div class="wrapper">app.router = <span class="hljs-keyword">new</span> Backbone.Router();</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>add a listener for the <code>app:setTitle</code> event</p></div></div><div class="code"><div class="wrapper">vent.on(<span class="hljs-string">'app:setTitle'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(title)</span> {</span>
+    document.title = title;
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>add a listener for the <code>app:navigate</code> event</p></div></div><div class="code"><div class="wrapper">vent.on(<span class="hljs-string">'app:navigate'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(path, trigger)</span> {</span>
+    app.router.navigate(path, { trigger: (trigger || <span class="hljs-literal">false</span>) });
 });
 
 module.exports = app;</div></div></div></div></body></html>

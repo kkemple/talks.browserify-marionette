@@ -7,17 +7,14 @@
         active: <span class="hljs-literal">false</span>,
         steps: <span class="hljs-number">0</span>,
         index: <span class="hljs-number">0</span>,
-        titleSlide: <span class="hljs-literal">false</span>,
-        imageSlide: <span class="hljs-literal">false</span>
-    },</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving forward</p>
-<p><strong>Returns a Boolean</strong></p></div></div><div class="code"><div class="wrapper">    canStepForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        titleSlide: <span class="hljs-literal">false</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving forward</p></div></div><div class="code"><div class="wrapper">    canStepForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) &lt; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>);
-    },</div></div></div><div class="segment"><div class="comments doc-section"><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving backward</p>
-<p><strong>Returns a Boolean</strong></p></div></div><div class="code"><div class="wrapper">    canStepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Checks the model to see if it can show a/another bullet point moving backward</p></div></div><div class="code"><div class="wrapper">    canStepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'steps'</span>) &amp;&amp; <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) &gt; <span class="hljs-number">0</span>;
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Updates the model&#39;s <code>index</code> by incrementing</p></div></div><div class="code"><div class="wrapper">    stepForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'index'</span>, <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) + <span class="hljs-number">1</span>);
-    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Updates the model&#39;s <code>index</code> by de-incrementing</p></div></div><div class="code"><div class="wrapper">    stepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Updates the model&#39;s <code>index</code> by decrementing</p></div></div><div class="code"><div class="wrapper">    stepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'index'</span>, <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'index'</span>) - <span class="hljs-number">1</span>);
     }
 });

@@ -160,6 +160,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/reqres.js",
+            "projectPath": "js/config/reqres.js",
+            "targetPath": "config/reqres",
+            "pageTitle": "config/reqres",
+            "title": "reqres"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/slides.js",
             "projectPath": "js/config/slides.js",
             "targetPath": "config/slides",
@@ -225,6 +245,96 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "controllers/presentation",
             "pageTitle": "controllers/presentation",
             "title": "presentation"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "libs",
+        "title": "libs"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/backbone.js",
+            "projectPath": "js/libs/backbone.js",
+            "targetPath": "libs/backbone",
+            "pageTitle": "libs/backbone",
+            "title": "backbone"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/jquery.js",
+            "projectPath": "js/libs/jquery.js",
+            "targetPath": "libs/jquery",
+            "pageTitle": "libs/jquery",
+            "title": "jquery"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/marionette.js",
+            "projectPath": "js/libs/marionette.js",
+            "targetPath": "libs/marionette",
+            "pageTitle": "libs/marionette",
+            "title": "marionette"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/libs/underscore.js",
+            "projectPath": "js/libs/underscore.js",
+            "targetPath": "libs/underscore",
+            "pageTitle": "libs/underscore",
+            "title": "underscore"
           },
           "depth": 2,
           "outline": []
@@ -414,6 +524,258 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpConsole.hbs",
+                "projectPath": "partials/slides/gettingSetUpConsole.hbs",
+                "targetPath": "partials/slides/gettingSetUpConsole",
+                "pageTitle": "partials/slides/gettingSetUpConsole",
+                "title": "gettingSetUpConsole"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpGrunt.hbs",
+                "projectPath": "partials/slides/gettingSetUpGrunt.hbs",
+                "targetPath": "partials/slides/gettingSetUpGrunt",
+                "pageTitle": "partials/slides/gettingSetUpGrunt",
+                "title": "gettingSetUpGrunt"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpNonNpmDeps.hbs",
+                "projectPath": "partials/slides/gettingSetUpNonNpmDeps.hbs",
+                "targetPath": "partials/slides/gettingSetUpNonNpmDeps",
+                "pageTitle": "partials/slides/gettingSetUpNonNpmDeps",
+                "title": "gettingSetUpNonNpmDeps"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpPackageJson.hbs",
+                "projectPath": "partials/slides/gettingSetUpPackageJson.hbs",
+                "targetPath": "partials/slides/gettingSetUpPackageJson",
+                "pageTitle": "partials/slides/gettingSetUpPackageJson",
+                "title": "gettingSetUpPackageJson"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpShimmingGlobals.hbs",
+                "projectPath": "partials/slides/gettingSetUpShimmingGlobals.hbs",
+                "targetPath": "partials/slides/gettingSetUpShimmingGlobals",
+                "pageTitle": "partials/slides/gettingSetUpShimmingGlobals",
+                "title": "gettingSetUpShimmingGlobals"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/gettingSetUpUnderstandingTransforms.hbs",
+                "projectPath": "partials/slides/gettingSetUpUnderstandingTransforms.hbs",
+                "targetPath": "partials/slides/gettingSetUpUnderstandingTransforms",
+                "pageTitle": "partials/slides/gettingSetUpUnderstandingTransforms",
+                "title": "gettingSetUpUnderstandingTransforms"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionette.hbs",
+                "projectPath": "partials/slides/marionette.hbs",
+                "targetPath": "partials/slides/marionette",
+                "pageTitle": "partials/slides/marionette",
+                "title": "marionette"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteAppConfig.hbs",
+                "projectPath": "partials/slides/marionetteAppConfig.hbs",
+                "targetPath": "partials/slides/marionetteAppConfig",
+                "pageTitle": "partials/slides/marionetteAppConfig",
+                "title": "marionetteAppConfig"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteAppStart.hbs",
+                "projectPath": "partials/slides/marionetteAppStart.hbs",
+                "targetPath": "partials/slides/marionetteAppStart",
+                "pageTitle": "partials/slides/marionetteAppStart",
+                "title": "marionetteAppStart"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteKeepThingsSmall.hbs",
+                "projectPath": "partials/slides/marionetteKeepThingsSmall.hbs",
+                "targetPath": "partials/slides/marionetteKeepThingsSmall",
+                "pageTitle": "partials/slides/marionetteKeepThingsSmall",
+                "title": "marionetteKeepThingsSmall"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteTemplates1.hbs",
+                "projectPath": "partials/slides/marionetteTemplates1.hbs",
+                "targetPath": "partials/slides/marionetteTemplates1",
+                "pageTitle": "partials/slides/marionetteTemplates1",
+                "title": "marionetteTemplates1"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteTemplates2.hbs",
+                "projectPath": "partials/slides/marionetteTemplates2.hbs",
+                "targetPath": "partials/slides/marionetteTemplates2",
+                "pageTitle": "partials/slides/marionetteTemplates2",
+                "title": "marionetteTemplates2"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
                 "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/whyUse.hbs",
                 "projectPath": "partials/slides/whyUse.hbs",
                 "targetPath": "partials/slides/whyUse",
@@ -561,6 +923,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "depth": 1,
       "children": [
         {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/routes/index.js",
+            "projectPath": "js/routes/index.js",
+            "targetPath": "routes/index",
+            "pageTitle": "routes/index",
+            "title": "index"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
           "type": "file",
           "data": {
             "language": {

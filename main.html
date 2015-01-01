@@ -5,12 +5,16 @@
     slidesConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config/slides'</span>),
     Presentation = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./views/presentation'</span>),
     $ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./libs/jquery'</span>),
+    reqres = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./config/reqres'</span>),
     slides,
     presentation;
 
+<span class="hljs-keyword">if</span> (!slidesConfig.length) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'At least one slide is required!'</span>);
 
 slides = <span class="hljs-keyword">new</span> Slides(slidesConfig);
-presentation = <span class="hljs-keyword">new</span> Presentation({ collection: slides });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Once the app is started show the presentation</p></div></div><div class="code"><div class="wrapper">app.addInitializer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+presentation = <span class="hljs-keyword">new</span> Presentation({ collection: slides });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Make slides available to rest of app</p></div></div><div class="code"><div class="wrapper">reqres.setHandler(<span class="hljs-string">'slides'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> slides;
+});</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Once the app is started show the presentation</p></div></div><div class="code"><div class="wrapper">app.addInitializer(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     app.mainRegion.show(presentation);
 });</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Catch all keyup events</p></div></div><div class="code"><div class="wrapper">$(document).on(<span class="hljs-string">'keyup'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
 

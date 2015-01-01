@@ -2,6 +2,7 @@
 
 <span class="hljs-keyword">var</span> Slide = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../models/slide'</span>),
     Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/backbone'</span>),
+    vent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/events'</span>),
     Slides;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The collection that is home to all slides in the app, instantiated in <code>js/main.js</code></p></div></div><div class="code"><div class="wrapper">Slides = Backbone.Collection.extend({
     model: Slide,
     initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(models)</span> {</span></div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>if we have any models set the first one to active (could be option)</p></div></div><div class="code"><div class="wrapper">        <span class="hljs-keyword">if</span> (models &amp;&amp; models.length) models[<span class="hljs-number">0</span>].active = <span class="hljs-literal">true</span>;
@@ -12,7 +13,6 @@ if it can not, it checks the collection itself</p></div></div><div class="code">
         <span class="hljs-keyword">var</span> slide;
 
         slide = <span class="hljs-keyword">this</span>.findWhere({ active: <span class="hljs-literal">true</span> });
-        <span class="hljs-keyword">if</span> (!slide) <span class="hljs-keyword">return</span>;
         <span class="hljs-keyword">if</span> (slide.canStepForward()) {
             slide.stepForward();
             <span class="hljs-keyword">return</span>;
@@ -20,14 +20,13 @@ if it can not, it checks the collection itself</p></div></div><div class="code">
 
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.index === <span class="hljs-keyword">this</span>.length - <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span>;
         slide.set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">false</span>);
-        <span class="hljs-keyword">this</span>.at(++<span class="hljs-keyword">this</span>.index).set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">true</span>);
+        <span class="hljs-keyword">this</span>.setActiveSlide(++<span class="hljs-keyword">this</span>.index);
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Responsible for transitioning to the previous step/slide
 Checks the current slide to see if it has steps and can step bacward
 if it can not, it checks the collection itself</p></div></div><div class="code"><div class="wrapper">    stepBackward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">var</span> slide;
 
         slide = <span class="hljs-keyword">this</span>.findWhere({ active: <span class="hljs-literal">true</span> });
-        <span class="hljs-keyword">if</span> (!slide) <span class="hljs-keyword">return</span>;
         <span class="hljs-keyword">if</span> (slide.canStepBackward()) {
             slide.stepBackward();
             <span class="hljs-keyword">return</span>;
@@ -35,18 +34,32 @@ if it can not, it checks the collection itself</p></div></div><div class="code">
 
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.index === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
         slide.set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">false</span>);
-        <span class="hljs-keyword">this</span>.at(--<span class="hljs-keyword">this</span>.index).set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">true</span>);
+        <span class="hljs-keyword">this</span>.setActiveSlide(--<span class="hljs-keyword">this</span>.index);
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Responsible for transitioning to the specified slide
 Sets current slide to not active, then grabs slide at specified index and sets to active</p></div></div><div class="code"><div class="wrapper">    stepTo: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index)</span> {</span>
         <span class="hljs-keyword">var</span> slide;
 
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> index !== <span class="hljs-string">'number'</span> ||
+                index &gt; <span class="hljs-keyword">this</span>.length ||
+                index &lt; <span class="hljs-number">1</span>) {
+
+            vent.trigger(<span class="hljs-string">'app:navigate'</span>, <span class="hljs-string">'slides/'</span> + (<span class="hljs-keyword">this</span>.index + <span class="hljs-number">1</span>));
+            <span class="hljs-keyword">return</span>;
+        }
+        --index;
         <span class="hljs-keyword">if</span> (index === <span class="hljs-keyword">this</span>.index) <span class="hljs-keyword">return</span>;
         slide = <span class="hljs-keyword">this</span>.findWhere({ active: <span class="hljs-literal">true</span> });
-        <span class="hljs-keyword">if</span> (!slide) <span class="hljs-keyword">return</span>;
-
-        slide.set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">false</span>);
-        <span class="hljs-keyword">this</span>.at(index).set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">true</span>);
         <span class="hljs-keyword">this</span>.index = index;
+        slide.set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">false</span>);
+        <span class="hljs-keyword">this</span>.at(<span class="hljs-keyword">this</span>.index).set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">true</span>);
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Responsible for setting the active slide and then
+firing related app events</p></div></div><div class="code"><div class="wrapper">    setActiveSlide: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(index)</span> {</span>
+        <span class="hljs-keyword">var</span> slide = <span class="hljs-keyword">this</span>.at(index);
+
+        slide.set(<span class="hljs-string">'active'</span>, <span class="hljs-literal">true</span>);
+        vent.trigger(<span class="hljs-string">'app:navigate'</span>, <span class="hljs-string">'slides/'</span> + (<span class="hljs-keyword">this</span>.index + <span class="hljs-number">1</span>));
+        vent.trigger(<span class="hljs-string">'app:setTitle'</span>, slide.get(<span class="hljs-string">'title'</span>));
     }
 });
 
