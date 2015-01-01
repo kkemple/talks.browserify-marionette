@@ -713,11 +713,53 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteConfigInit.hbs",
+                "projectPath": "partials/slides/marionetteConfigInit.hbs",
+                "targetPath": "partials/slides/marionetteConfigInit",
+                "pageTitle": "partials/slides/marionetteConfigInit",
+                "title": "marionetteConfigInit"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
                 "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteKeepThingsSmall.hbs",
                 "projectPath": "partials/slides/marionetteKeepThingsSmall.hbs",
                 "targetPath": "partials/slides/marionetteKeepThingsSmall",
                 "pageTitle": "partials/slides/marionetteKeepThingsSmall",
                 "title": "marionetteKeepThingsSmall"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteKeepThingsSmallTitle.hbs",
+                "projectPath": "partials/slides/marionetteKeepThingsSmallTitle.hbs",
+                "targetPath": "partials/slides/marionetteKeepThingsSmallTitle",
+                "pageTitle": "partials/slides/marionetteKeepThingsSmallTitle",
+                "title": "marionetteKeepThingsSmallTitle"
               },
               "depth": 3,
               "outline": []
@@ -760,6 +802,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                 "targetPath": "partials/slides/marionetteTemplates2",
                 "pageTitle": "partials/slides/marionetteTemplates2",
                 "title": "marionetteTemplates2"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteWorkingWithTemplates.hbs",
+                "projectPath": "partials/slides/marionetteWorkingWithTemplates.hbs",
+                "targetPath": "partials/slides/marionetteWorkingWithTemplates",
+                "pageTitle": "partials/slides/marionetteWorkingWithTemplates",
+                "title": "marionetteWorkingWithTemplates"
               },
               "depth": 3,
               "outline": []
