@@ -1,0 +1,24 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* js/views/slide.js */
+
+var Marionette = require('../libs/marionette'),
+    templates = require('../config/templates'),
+    hljs = require('highlight.js'), // NPM module
+    Slide;
+
+Slide = Marionette.ItemView.extend({
+    template: function(modelAttrs) { return templates[modelAttrs.id]; },
+    events: { ... },
+    modelEvents: { ... },
+    initialize: function() { ... },
+    onRender: function() { ... },
+    transition: function() { ... },
+    step: function() { ... }
+});
+
+module.exports = Slide;
+        </code>
+    </pre>
+</div>

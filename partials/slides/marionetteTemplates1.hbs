@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* Gruntfile.js */
+
+grunt.registerTask('compile-templates', function() {
+    var js = '';
+    grunt.file.recurse('partials/slides/',
+            function(abspath, rootdir, subdir, filename) {
+
+        var file = filename.replace('.hbs', '');
+        js += 'module.exports.' +
+                file +
+                ' = require(\'../../../partials/slides/' +
+                file +
+                '.hbs\');' +
+                '\n';
+    });
+    grunt.file.write('js/config/templates/index.js', js);
+});
+        </code>
+    </pre>
+</div>

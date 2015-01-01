@@ -15,7 +15,6 @@ app = new Marionette.Application({
 });
 app.router = new Backbone.Router();
 vent.on('app:navigate', function(path, trigger) { ... });
-app.on('start', function() { Backbone.history.start(); });
 
 module.exports = app;
         </code>

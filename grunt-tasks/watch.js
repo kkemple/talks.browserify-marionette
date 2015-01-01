@@ -13,7 +13,7 @@ module.exports = {
     },
     templates: {
         files: ['partials/slides/*.hbs'],
-        tasks: ['templates']
+        tasks: ['compile-templates']
     },
     img: {
         files: ['img/**'],

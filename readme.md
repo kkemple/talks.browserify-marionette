@@ -23,7 +23,6 @@ The actual slides for the presentation can be viewed at [http://github.io/kkempl
     - Setting up our app
     - Keeping Things Small
     - Setting Up Templates
-    - Setting Up Views, Models, and Collections
     - Using Marionette Modules
     - Setting Up Routing
 

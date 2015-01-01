@@ -17,7 +17,6 @@ presentation = new Presentation({ collection: slides });
 reqres.setHandler('slides', function() { return slides; });
 app.addInitializer(function() { app.mainRegion.show(presentation); });
 
-// Finally, start the app
 app.start();
 
         </code>

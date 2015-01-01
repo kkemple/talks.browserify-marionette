@@ -20,4 +20,7 @@ module.exports = [
     { id: 'marionette', title: 'Browserify + Marionette - Adding Marionette To the Mix', titleSlide: true },
     { id: 'marionetteAppConfig', title: 'Browserify + Marionette - Configuring Your Marionette App' },
     { id: 'marionetteAppStart', title: 'Browserify + Marionette - Starting Your Marionette App' },
+    { id: 'marionetteKeepThingsSmall', title: 'Browserify + Marionette - Keep Things Small' },
+    { id: 'marionetteTemplates1', title: 'Browserify + Marionette - Pre-compiling Templates - 1' },
+    { id: 'marionetteTemplates2', title: 'Browserify + Marionette - Pre-compiling Templates - 2' },
 ];
