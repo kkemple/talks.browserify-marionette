@@ -6,6 +6,7 @@ var app = require('./app'),
     Presentation = require('./views/presentation'),
     $ = require('./libs/jquery'),
     reqres = require('./config/reqres'),
+    vent = require('./config/events'),
     slides,
     presentation;
 
@@ -23,6 +24,9 @@ reqres.setHandler('slides', function() {
 app.addInitializer(function() {
     app.mainRegion.show(presentation);
 });
+
+// listen for slides:step events
+vent.on('slides:step', function(action) { slides[action](); });
 
 // Catch all keyup events
 $(document).on('keyup', function(e) {

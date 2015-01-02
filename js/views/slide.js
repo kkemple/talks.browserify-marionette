@@ -3,6 +3,7 @@
 var Marionette = require('../libs/marionette'),
     templates = require('../config/templates'),
     hljs = require('highlight.js'),
+    ScreenEvent = require('../models/screen-event'),
     Slide;
 
 
@@ -21,12 +22,23 @@ Slide = Marionette.ItemView.extend({
     },
 
     /**
+     * Set up event handlers for when we get mouse action
+     */
+    events: function() {
+        return (/mobile/.test(navigator.userAgent)) ?
+            { 'touchstart': 'start', 'touchend': 'stop' } :
+            { 'mousedown': 'start', 'mouseup': 'stop' };
+    },
+
+    /**
      * If the model's `active` prop is true, add `active` class
      * If the model's `titleSlide` prop is true, add `title-slide` class
      */
     initialize: function() {
         if (this.model.get('active')) this.$el.toggleClass('active');
         if (this.model.get('titleSlide')) this.$el.addClass('title-slide');
+
+        this.screenEvent = new ScreenEvent();
     },
 
     /**
@@ -64,6 +76,14 @@ Slide = Marionette.ItemView.extend({
             this.steps.slice(this.stepIndex, idx).fadeIn();
         }
         this.stepIndex = idx;
+    },
+
+    start: function(e) {
+        this.screenEvent.set('startX', e.pageX);
+    },
+
+    stop: function(e) {
+        this.screenEvent.set('endX', e.pageX);
     }
 });
 
