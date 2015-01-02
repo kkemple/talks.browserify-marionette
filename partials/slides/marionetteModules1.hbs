@@ -3,21 +3,23 @@
         <code class="hljs javascript">
 /* js/modules/presentation.js */
 
-var Marionette = require('../libs/'),
+var Marionette = require('../libs/marionette'),
+    ...
     PresentationModule;
 
-var PresentationModule = Marionette.Module.extend({
+PresentationModule = Marionette.Module.extend({
+    startWithParent: false,
+    _started: false,
     initialize: function() { ... },
     onStart: function() { ... },
-    onStop: function() { ... }
+    onStop: function() { ... },
+    _onStepEvent: function(action) { ... },
+    _onRoute: function(router) { ... },
+    _onKeyboardEvent: function(e) { ... }
 });
 
+module.exports = PresentationModule;
 
-/* js/modules/index.js */
-var PresentationModule = require('./presentation'),
-    app = require('../app');
-
-app.module('presentation', PresentationModule);
         </code>
     </pre>
 </div>
