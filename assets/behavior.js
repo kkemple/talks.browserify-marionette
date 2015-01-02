@@ -122,52 +122,29 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             {
               "type": "heading",
               "data": {
-                "level": 2,
-                "title": "Config",
-                "slug": "config"
+                "level": 3,
+                "title": "./templates/index.js",
+                "slug": "templatesindexjs"
               },
-              "depth": 2,
-              "children": [
-                {
-                  "type": "heading",
-                  "data": {
-                    "level": 3,
-                    "title": "templates/",
-                    "slug": "templates"
-                  },
-                  "depth": 3
-                }, {
-                  "type": "heading",
-                  "data": {
-                    "level": 3,
-                    "title": "slides.js",
-                    "slug": "slidesjs"
-                  },
-                  "depth": 3
-                }
-              ]
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "./slides.js",
+                "slug": "slidesjs"
+              },
+              "depth": 3
+            }, {
+              "type": "heading",
+              "data": {
+                "level": 3,
+                "title": "./events.js",
+                "slug": "eventsjs"
+              },
+              "depth": 3
             }
           ]
-        }, {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/reqres.js",
-            "projectPath": "js/config/reqres.js",
-            "targetPath": "config/reqres",
-            "pageTitle": "config/reqres",
-            "title": "reqres"
-          },
-          "depth": 2,
-          "outline": []
         }, {
           "type": "file",
           "data": {
@@ -405,6 +382,36 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "targetPath": "models/slide",
             "pageTitle": "models/slide",
             "title": "slide"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
+        "path": "modules",
+        "title": "modules"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/modules/presentation.js",
+            "projectPath": "js/modules/presentation.js",
+            "targetPath": "modules/presentation",
+            "pageTitle": "modules/presentation",
+            "title": "presentation"
           },
           "depth": 2,
           "outline": []
@@ -796,6 +803,48 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteModules1.hbs",
+                "projectPath": "partials/slides/marionetteModules1.hbs",
+                "targetPath": "partials/slides/marionetteModules1",
+                "pageTitle": "partials/slides/marionetteModules1",
+                "title": "marionetteModules1"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteModulesTitle.hbs",
+                "projectPath": "partials/slides/marionetteModulesTitle.hbs",
+                "targetPath": "partials/slides/marionetteModulesTitle",
+                "pageTitle": "partials/slides/marionetteModulesTitle",
+                "title": "marionetteModulesTitle"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
                 "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/marionetteTemplates1.hbs",
                 "projectPath": "partials/slides/marionetteTemplates1.hbs",
                 "targetPath": "partials/slides/marionetteTemplates1",
@@ -1006,26 +1055,6 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "depth": 1,
       "children": [
         {
-          "type": "file",
-          "data": {
-            "language": {
-              "nameMatchers": [".js"],
-              "pygmentsLexer": "javascript",
-              "multiLineComment": ["/*", "*", "*/"],
-              "singleLineComment": ["//"],
-              "ignorePrefix": "}",
-              "foldPrefix": "^",
-              "name": "JavaScript"
-            },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/routes/index.js",
-            "projectPath": "js/routes/index.js",
-            "targetPath": "routes/index",
-            "pageTitle": "routes/index",
-            "title": "index"
-          },
-          "depth": 2,
-          "outline": []
-        }, {
           "type": "file",
           "data": {
             "language": {

@@ -3,18 +3,16 @@
 <span class="hljs-keyword">var</span> Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/backbone'</span>),
     _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/underscore'</span>),
     vent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/events'</span>),
-    ScreenEvent;
-
-ScreenEvent = Backbone.Model.extend({
+    ScreenEvent;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Used to help manage touch/drag events</p></div></div><div class="code"><div class="wrapper">ScreenEvent = Backbone.Model.extend({
     defaults: {
         startX: <span class="hljs-number">0</span>,
-        endX: <span class="hljs-number">0</span>,
-        direction: <span class="hljs-string">''</span>
-    },
-    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        endX: <span class="hljs-number">0</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Listen to the endX prop for changes,
+process the full interaction</p></div></div><div class="code"><div class="wrapper">    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>, <span class="hljs-string">'change:endX'</span>, _.throttle(<span class="hljs-keyword">this</span>.processInteraction, <span class="hljs-number">300</span>));
-    },
-    processInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Responsible for determining if the interaction was
+significant enough to respond to, if so fire presentation
+level step event</p></div></div><div class="code"><div class="wrapper">    processInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">var</span> action, startX, endX;
 
         startX = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'startX'</span>);
@@ -26,7 +24,7 @@ ScreenEvent = Backbone.Model.extend({
             <span class="hljs-keyword">return</span>;
         }
         action = (startX &lt; endX) ? <span class="hljs-string">'stepBackward'</span> : <span class="hljs-string">'stepForward'</span>;
-        vent.trigger(<span class="hljs-string">'slides:step'</span>, action);
+        vent.trigger(<span class="hljs-string">'presentation:step'</span>, action);
     }
 });
 
