@@ -24,7 +24,7 @@ ScreenEvent = Backbone.Model.extend({
             this.set('endX', 0, { silent: true });
             return;
         }
-        action = (startX > endX) ? 'stepBackward' : 'stepForward';
+        action = (startX < endX) ? 'stepBackward' : 'stepForward';
         vent.trigger('slides:step', action);
     }
 });
