@@ -46,17 +46,17 @@ If the model&#39;s <code>titleSlide</code> prop is true, add <code>title-slide</
     },
 
     start: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> pageX = (e.type === <span class="hljs-string">'touchstart'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].pageX :
-                e.pageX;
-        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'startX'</span>, pageX);
+        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchstart'</span>) ?
+                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
+                e.screenX;
+        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'startX'</span>, screenX);
     },
 
     stop: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> pageY = (e.type === <span class="hljs-string">'touchend'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].pageY :
-                e.pageY;
-        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'endX'</span>, pageY);
+        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchend'</span>) ?
+                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
+                e.screenX;
+        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'endX'</span>, screenX);
     }
 });
 
