@@ -1,13 +1,14 @@
 <!DOCTYPE html><html lang="en"><head><title>config/readme</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="config/readme"><meta name="groc-project-path" content="js/config/readme.md"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/config/readme.md">js/config/readme.md</a></div></div><div id="document"><div class="segment"><div class="comments "><div class="wrapper"><p>This folder contains all the configuration needed to make the app work. So far that really only entails the templates object and the slides configuration for the Slides Collection, and the event bus for the application.</p>
-<hr>
-<h3 id="templatesindexjs">./templates/index.js</h3>
+<ul>
+<li>./templates/index.js *</li>
+</ul>
 <p>The templates are parsed in to functions by Browserify and there is a custom grunt task <code>templates</code> defined in <code>Gruntfile.js</code> that generates the code in the <code>templates/index.js</code> file. This was done simply to make calling the right template for each slide a bit easier.</p>
 <p>Usage:</p>
 <pre><code>var Backbone = require(&#39;./some/path/libs/marionette&#39;),
     templates = require(&#39;./some/path/config/templates&#39;),
-    SomeModel;
+    SomeView;
 
-SomeModel = Backbone.Model.extend({
+SomeView = Backbone.View.extend({
     template: function(rawModel) {
         return templates.someTemplate;
     },
@@ -17,9 +18,11 @@ SomeModel = Backbone.Model.extend({
 });
 
 ...</code></pre>
-<hr>
-<h3 id="slidesjs">./slides.js</h3>
+<ul>
+<li>./slides.js *</li>
+</ul>
 <p>Just the configuration that will power the slides.</p>
-<hr>
-<h3 id="eventsjs">./events.js</h3>
+<ul>
+<li>./events.js *</li>
+</ul>
 <p>The home of our event bus for the application, since the app is small we only have one global event bus. This events module is really just an instance of <code>Backbone.Wreqr.EventAggregator</code>, the functionality provided by that class is just fine, but we could easily use Node&#39;s <code>events</code> module, or any other NPM event module since we are using browserify.</p></div></div></div></div></body></html>

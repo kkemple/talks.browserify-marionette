@@ -118,33 +118,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
             "title": "readme"
           },
           "depth": 2,
-          "outline": [
-            {
-              "type": "heading",
-              "data": {
-                "level": 3,
-                "title": "./templates/index.js",
-                "slug": "templatesindexjs"
-              },
-              "depth": 3
-            }, {
-              "type": "heading",
-              "data": {
-                "level": 3,
-                "title": "./slides.js",
-                "slug": "slidesjs"
-              },
-              "depth": 3
-            }, {
-              "type": "heading",
-              "data": {
-                "level": 3,
-                "title": "./events.js",
-                "slug": "eventsjs"
-              },
-              "depth": 3
-            }
-          ]
+          "outline": []
         }, {
           "type": "file",
           "data": {
