@@ -1,4 +1,6 @@
-This folder contains all the configuration needed to make the app work. So far that really only entails the templates object and the slides configuration for the Slides Collection.
+This folder contains all the configuration needed to make the app work. So far that really only entails the templates object and the slides configuration for the Slides Collection, and the event bus for the application.
+
+___
 
 ### ./templates/index.js
 
@@ -25,11 +27,13 @@ SomeModel = Backbone.Model.extend({
 
 ```
 
+___
 
 ### ./slides.js
 
 Just the configuration that will power the slides.
 
+___
 
 ### ./events.js
 
