@@ -380,6 +380,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/screen-event.js",
+            "projectPath": "js/models/screen-event.js",
+            "targetPath": "models/screen-event",
+            "pageTitle": "models/screen-event",
+            "title": "screen-event"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/slide.js",
             "projectPath": "js/models/slide.js",
             "targetPath": "models/slide",
