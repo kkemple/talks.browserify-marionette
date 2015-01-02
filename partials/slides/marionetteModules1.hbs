@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* js/modules/presentation.js */
+
+var Marionette = require('../libs/'),
+    PresentationModule;
+
+var PresentationModule = Marionette.Module.extend({
+    initialize: function() { ... },
+    onStart: function() { ... },
+    onStop: function() { ... }
+});
+
+
+/* js/modules/index.js */
+var PresentationModule = require('./presentation'),
+    app = require('../app');
+
+app.module('presentation', PresentationModule);
+        </code>
+    </pre>
+</div>

@@ -1,55 +1,30 @@
 'use strict';
 
 var app = require('./app'),
-    Slides = require('./collections/slides'),
-    slidesConfig = require('./config/slides'),
-    Presentation = require('./views/presentation'),
-    $ = require('./libs/jquery'),
-    reqres = require('./config/reqres'),
+    Backbone = require('./libs/backbone'),
     vent = require('./config/events'),
-    slides,
-    presentation;
+    PresentationModule = require('./modules/presentation');
 
-if (!slidesConfig.length) throw new Error('At least one slide is required!');
-
-slides = new Slides(slidesConfig);
-presentation = new Presentation({ collection: slides });
-
-// Make slides available to rest of app
-reqres.setHandler('slides', function() {
-    return slides;
+// add a listener for the `app:screen` event
+vent.on('app:screen', function(view) {
+    app.mainRegion.show(view);
 });
 
-// Once the app is started show the presentation
-app.addInitializer(function() {
-    app.mainRegion.show(presentation);
+// add a listener for the `app:setTitle` event
+vent.on('app:setTitle', function(title) {
+    document.title = title;
 });
 
-// listen for slides:step events
-vent.on('slides:step', function(action) { slides[action](); });
-
-// Catch all keyup events
-$(document).on('keyup', function(e) {
-
-    switch (e.which) {
-
-        // For left and up, step backward
-        case 37:
-        case 38:
-            slides.stepBackward();
-            e.preventDefault();
-            break;
-
-        // For right and down, step forward
-        case 39:
-        case 40:
-            slides.stepForward();
-            e.preventDefault();
-            break;
-        default:
-            break;
-    }
+// add a listener for the `app:navigate` event
+vent.on('app:navigate', function(path, trigger) {
+    Backbone.history.navigate(path, { trigger: (trigger || false) });
 });
+
+// add all modules
+app.module('presenation', PresentationModule);
 
 // Finally, start the app
 app.start();
+
+// start the history
+Backbone.history.start();

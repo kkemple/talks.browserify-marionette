@@ -1,8 +1,8 @@
 # Browserify + Marionette = <3
 
-This is a presentation application built with Browserify and Marionette. You can view the annotated source at [http://github.io/kkemple/talks.browserify-marionette](http://github.io/kkemple/talks.browserify-marionette)
+This is a presentation application built with Browserify and Marionette. You can view the annotated source at [http://github.io/kkemple/talks.browserify-marionette/readme.html](http://github.io/kkemple/talks.browserify-marionette/readme.html)
 
-The actual slides for the presentation can be viewed at [http://github.io/kkemple/slides.browserify.marionette](http://github.io/kkemple/slides.browserify-marionette)
+The actual slides for the presentation can be viewed at [http://github.io/kkemple/slides.browserify-marionette](http://github.io/kkemple/slides.browserify-marionette)
 
 ### Overview
 
@@ -18,12 +18,11 @@ The actual slides for the presentation can be viewed at [http://github.io/kkempl
     - Shimming Globals
     - Understanding Transforms
 
-- Adding Marionette In To The Mix
-    - Configuration vs Startup
-    - Setting up our app
+- Browserify and Marionette
+    - Configuration and Initialization
     - Keeping Things Small
-    - Setting Up Templates
-    - Using Marionette Modules
+    - Pre-compiling Templates
+    - What About Modules?
     - Setting Up Routing
 
 - Resources

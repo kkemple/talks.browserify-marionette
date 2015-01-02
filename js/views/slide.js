@@ -25,10 +25,10 @@ Slide = Marionette.ItemView.extend({
      * Set up event handlers for when we get mouse action
      */
     events: {
-        'touchstart': 'start',
-        'touchend': 'stop',
-        'mousedown': 'start',
-        'mouseup': 'stop'
+        'touchstart': 'startScreenInteraction',
+        'touchend': 'stopScreenInteraction',
+        'mousedown': 'startScreenInteraction',
+        'mouseup': 'stopScreenInteraction'
     },
 
     /**
@@ -79,14 +79,24 @@ Slide = Marionette.ItemView.extend({
         this.stepIndex = idx;
     },
 
-    start: function(e) {
+    /**
+     * When we get a mousedown/touchstart event, set the starting X
+     * coordinate so we can process the interaction once the end event is fired
+     */
+    startScreenInteraction: function(e) {
         var screenX = (e.type === 'touchstart') ?
                 e.originalEvent.changedTouches[0].screenX :
                 e.screenX;
         this.screenEvent.set('startX', screenX);
     },
 
-    stop: function(e) {
+    /**
+     * When we get a mouseup/touchend event, set the ending X
+     * coordinate so we can process the interaction and determine
+     * if we care about the screen event, all logic for that
+     * lives in the screen event model
+     */
+    stopScreenInteraction: function(e) {
         var screenX = (e.type === 'touchend') ?
                 e.originalEvent.changedTouches[0].screenX :
                 e.screenX;

@@ -5,15 +5,28 @@ var Backbone = require('../libs/backbone'),
     vent = require('../config/events'),
     ScreenEvent;
 
+/**
+ * Used to help manage touch/drag events
+ */
 ScreenEvent = Backbone.Model.extend({
     defaults: {
         startX: 0,
-        endX: 0,
-        direction: ''
+        endX: 0
     },
+
+    /**
+     * Listen to the endX prop for changes,
+     * process the full interaction
+     */
     initialize: function() {
         this.listenTo(this, 'change:endX', _.throttle(this.processInteraction, 300));
     },
+
+    /**
+     * Responsible for determining if the interaction was
+     * significant enough to respond to, if so fire presentation
+     * level step event
+     */
     processInteraction: function() {
         var action, startX, endX;
 
@@ -26,7 +39,7 @@ ScreenEvent = Backbone.Model.extend({
             return;
         }
         action = (startX < endX) ? 'stepBackward' : 'stepForward';
-        vent.trigger('slides:step', action);
+        vent.trigger('presentation:step', action);
     }
 });
 

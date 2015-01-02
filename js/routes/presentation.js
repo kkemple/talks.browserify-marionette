@@ -1,13 +1,21 @@
 'use strict';
 
 var Marionette = require('../libs/marionette'),
-    PresentationController = require('../controllers/presentation'),
     PresentationRouter;
 
+/**
+ * The router for our presentation module,
+ * a good rule of thumb is to have one router per module
+ */
 PresentationRouter = Marionette.AppRouter.extend({
-    controller: new PresentationController(),
     appRoutes: {
         'slides/:id': 'stepTo'
+    },
+    routes: {
+        '': '_init'
+    },
+    _init: function() {
+        this.navigate('slides/1');
     }
 });
 
