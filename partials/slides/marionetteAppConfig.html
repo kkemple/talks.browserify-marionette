@@ -4,8 +4,6 @@
 /* js/app.js */
 
 var Marionette = require('./libs/marionette'),
-    Backbone = require('./libs/backbone'),
-    vent = require('./config/events'),
     app;
 
 app = new Marionette.Application({
@@ -13,8 +11,6 @@ app = new Marionette.Application({
         mainRegion: '#app'
     }
 });
-app.router = new Backbone.Router();
-vent.on('app:navigate', function(path, trigger) { ... });
 
 module.exports = app;
         <span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>

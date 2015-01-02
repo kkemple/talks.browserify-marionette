@@ -5,20 +5,21 @@
 /* js/main.js */
 
 var app = require('./app'),
-    Slides = require('./collections/slides'),
-    slidesConfig = require('./config/slides'),
-    Presentation = require('./views/presentation'),
-    reqres = require('./config/reqres'),
-    slides,
-    presentation;
+    Backbone = require('./libs/backbone'),
+    vent = require('./config/events'),
+    PresentationModule = require('./modules/presentation');
 
-slides = new Slides(slidesConfig);
-presentation = new Presentation({ collection: slides });
-reqres.setHandler('slides', function() { return slides; });
-app.addInitializer(function() { app.mainRegion.show(presentation); });
+// add any app level event listerers
+vent.on('app:screen', function(view) { ... });
+vent.on('app:setTitle', function(title) { ... });
+vent.on('app:navigate', function(path, trigger) { ... });
+
+// add all modules
+app.module('presenation', PresentationModule);
+...
 
 app.start();
-
+Backbone.history.start();
         <span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">pre</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
