@@ -1,6 +1,7 @@
 'use strict';
 
 var Backbone = require('../libs/backbone'),
+    _ = require('../libs/underscore'),
     vent = require('../config/events'),
     ScreenEvent;
 
@@ -11,7 +12,7 @@ ScreenEvent = Backbone.Model.extend({
         direction: ''
     },
     initialize: function() {
-        this.listenTo(this, 'change:endX', this.processInteraction);
+        this.listenTo(this, 'change:endX', _.throttle(this.processInteraction, 300));
     },
     processInteraction: function() {
         var action, startX, endX;

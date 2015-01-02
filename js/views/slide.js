@@ -80,17 +80,17 @@ Slide = Marionette.ItemView.extend({
     },
 
     start: function(e) {
-        var pageX = (e.type === 'touchstart') ?
-                e.originalEvent.changedTouches[0].pageX :
-                e.pageX;
-        this.screenEvent.set('startX', pageX);
+        var screenX = (e.type === 'touchstart') ?
+                e.originalEvent.changedTouches[0].screenX :
+                e.screenX;
+        this.screenEvent.set('startX', screenX);
     },
 
     stop: function(e) {
-        var pageY = (e.type === 'touchend') ?
-                e.originalEvent.changedTouches[0].pageY :
-                e.pageY;
-        this.screenEvent.set('endX', pageY);
+        var screenX = (e.type === 'touchend') ?
+                e.originalEvent.changedTouches[0].screenX :
+                e.screenX;
+        this.screenEvent.set('endX', screenX);
     }
 });
 
