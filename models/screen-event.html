@@ -24,7 +24,7 @@ ScreenEvent = Backbone.Model.extend({
             <span class="hljs-keyword">this</span>.set(<span class="hljs-string">'endX'</span>, <span class="hljs-number">0</span>, { silent: <span class="hljs-literal">true</span> });
             <span class="hljs-keyword">return</span>;
         }
-        action = (startX &gt; endX) ? <span class="hljs-string">'stepBackward'</span> : <span class="hljs-string">'stepForward'</span>;
+        action = (startX &lt; endX) ? <span class="hljs-string">'stepBackward'</span> : <span class="hljs-string">'stepForward'</span>;
         vent.trigger(<span class="hljs-string">'slides:step'</span>, action);
     }
 });
