@@ -1,0 +1,1 @@
+module.exports = new Backbone.Wreqr.Commands();
