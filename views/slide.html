@@ -3,7 +3,7 @@
 <span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/marionette'</span>),
     templates = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/templates'</span>),
     hljs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'highlight.js'</span>),
-    ScreenEvent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../models/screen-event'</span>),
+    SwipeBehavior = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../behaviors/swipe-interaction'</span>),
     Slide;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The view layer for each slide, minimal functionality
 Responsible for updating steps (bullet points) when the backing model&#39;s index changes</p></div></div><div class="code"><div class="wrapper">Slide = Marionette.ItemView.extend({
     template: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(modelAttrs)</span> {</span>
@@ -13,17 +13,14 @@ Responsible for updating steps (bullet points) when the backing model&#39;s inde
     modelEvents: {
         <span class="hljs-string">'change:active'</span>: <span class="hljs-string">'transition'</span>,
         <span class="hljs-string">'change:index'</span>: <span class="hljs-string">'step'</span>
-    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Set up event handlers for when we get mouse action</p></div></div><div class="code"><div class="wrapper">    events: {
-        <span class="hljs-string">'touchstart'</span>: <span class="hljs-string">'startScreenInteraction'</span>,
-        <span class="hljs-string">'touchend'</span>: <span class="hljs-string">'stopScreenInteraction'</span>,
-        <span class="hljs-string">'mousedown'</span>: <span class="hljs-string">'startScreenInteraction'</span>,
-        <span class="hljs-string">'mouseup'</span>: <span class="hljs-string">'stopScreenInteraction'</span>
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Handle swipe interaction</p></div></div><div class="code"><div class="wrapper">    behaviors: {
+        SwipeBehavior: {
+            behaviorClass: SwipeBehavior
+        }
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>If the model&#39;s <code>active</code> prop is true, add <code>active</code> class
 If the model&#39;s <code>titleSlide</code> prop is true, add <code>title-slide</code> class</p></div></div><div class="code"><div class="wrapper">    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'active'</span>)) <span class="hljs-keyword">this</span>.$el.toggleClass(<span class="hljs-string">'active'</span>);
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'titleSlide'</span>)) <span class="hljs-keyword">this</span>.$el.addClass(<span class="hljs-string">'title-slide'</span>);
-
-        <span class="hljs-keyword">this</span>.screenEvent = <span class="hljs-keyword">new</span> ScreenEvent();
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>If the model has steps, set a <code>stepIndex</code> and add a reference to the nodes in the DOM</p></div></div><div class="code"><div class="wrapper">    onRender: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.model.get(<span class="hljs-string">'steps'</span>)) {
             <span class="hljs-keyword">this</span>.stepIndex = <span class="hljs-number">0</span>;
@@ -43,20 +40,6 @@ If the model&#39;s <code>titleSlide</code> prop is true, add <code>title-slide</
             <span class="hljs-keyword">this</span>.steps.slice(<span class="hljs-keyword">this</span>.stepIndex, idx).fadeIn();
         }
         <span class="hljs-keyword">this</span>.stepIndex = idx;
-    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>When we get a mousedown/touchstart event, set the starting X
-coordinate so we can process the interaction once the end event is fired</p></div></div><div class="code"><div class="wrapper">    startScreenInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchstart'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
-                e.screenX;
-        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'startX'</span>, screenX);
-    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>When we get a mouseup/touchend event, set the ending X
-coordinate so we can process the interaction and determine
-if we care about the screen event, all logic for that
-lives in the screen event model</p></div></div><div class="code"><div class="wrapper">    stopScreenInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchend'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
-                e.screenX;
-        <span class="hljs-keyword">this</span>.screenEvent.set(<span class="hljs-string">'endX'</span>, screenX);
     }
 });
 

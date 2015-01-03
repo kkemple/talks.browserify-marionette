@@ -9,7 +9,7 @@ var app = require('./app'),
     vent = require('./config/events'),
     PresentationModule = require('./modules/presentation');
 
-// add any app level event listerers
+// add any app level event listeners
 vent.on('app:screen', function(view) { ... });
 vent.on('app:setTitle', function(title) { ... });
 vent.on('app:navigate', function(path, trigger) { ... });

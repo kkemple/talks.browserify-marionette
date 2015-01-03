@@ -7,6 +7,7 @@
     slidesConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/slides'</span>),
     PresentationView = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../views/presentation'</span>),
     vent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/events'</span>),
+    commands = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/commands'</span>),
     PresentationModule;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The main (only) module for this application,
 modules are responsible for building up / breaking down
 the functionality / data needed for this module to run properly</p>
@@ -24,7 +25,7 @@ If we have any view handling, handle it here</p>
 <p>Set up all listeners, trigger any events we need to fire</p></div></div><div class="code"><div class="wrapper">    onStart: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">this</span>._started = !<span class="hljs-keyword">this</span>._started;
         <span class="hljs-keyword">this</span>.view = <span class="hljs-keyword">new</span> PresentationView({ collection: <span class="hljs-keyword">this</span>.slides });
-        vent.on(<span class="hljs-string">'presentation:step'</span>, <span class="hljs-keyword">this</span>._onStepEvent.bind(<span class="hljs-keyword">this</span>));
+        commands.setHandler(<span class="hljs-string">'presentation:step'</span>, <span class="hljs-keyword">this</span>._onStepEvent.bind(<span class="hljs-keyword">this</span>));
         vent.trigger(<span class="hljs-string">'app:screen'</span>, <span class="hljs-keyword">this</span>.view);
 
         $(document).on(<span class="hljs-string">'keyup'</span>, <span class="hljs-keyword">this</span>._onKeyboardEvent.bind(<span class="hljs-keyword">this</span>));
@@ -33,7 +34,7 @@ If we have any views active, destroy them</p>
 <p>Remove any event listeners, trigger any events we need to fire</p></div></div><div class="code"><div class="wrapper">    onStop: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">this</span>._started = !<span class="hljs-keyword">this</span>._started;
         <span class="hljs-keyword">this</span>.view.destroy();
-        vent.off(<span class="hljs-string">'presentation:step'</span>);
+        commands.removeHandler(<span class="hljs-string">'presentation:step'</span>);
 
         $(document).off(<span class="hljs-string">'keyup'</span>, <span class="hljs-keyword">this</span>._onKeyboardEvent.bind(<span class="hljs-keyword">this</span>));
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Our module is concerned with the &#39;presentation:step&#39; event

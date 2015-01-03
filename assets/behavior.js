@@ -48,6 +48,36 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     }, {
       "type": "folder",
       "data": {
+        "path": "behaviors",
+        "title": "behaviors"
+      },
+      "depth": 1,
+      "children": [
+        {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/behaviors/swipe-interaction.js",
+            "projectPath": "js/behaviors/swipe-interaction.js",
+            "targetPath": "behaviors/swipe-interaction",
+            "pageTitle": "behaviors/swipe-interaction",
+            "title": "swipe-interaction"
+          },
+          "depth": 2,
+          "outline": []
+        }
+      ]
+    }, {
+      "type": "folder",
+      "data": {
         "path": "collections",
         "title": "collections"
       },
@@ -84,6 +114,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       "depth": 1,
       "children": [
         {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/commands.js",
+            "projectPath": "js/config/commands.js",
+            "targetPath": "config/commands",
+            "pageTitle": "config/commands",
+            "title": "commands"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
           "type": "file",
           "data": {
             "language": {
@@ -331,11 +381,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/screen-event.js",
-            "projectPath": "js/models/screen-event.js",
-            "targetPath": "models/screen-event",
-            "pageTitle": "models/screen-event",
-            "title": "screen-event"
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/slide.js",
+            "projectPath": "js/models/slide.js",
+            "targetPath": "models/slide",
+            "pageTitle": "models/slide",
+            "title": "slide"
           },
           "depth": 2,
           "outline": []
@@ -351,11 +401,11 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/slide.js",
-            "projectPath": "js/models/slide.js",
-            "targetPath": "models/slide",
-            "pageTitle": "models/slide",
-            "title": "slide"
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/models/swipe-event.js",
+            "projectPath": "js/models/swipe-event.js",
+            "targetPath": "models/swipe-event",
+            "pageTitle": "models/swipe-event",
+            "title": "swipe-event"
           },
           "depth": 2,
           "outline": []
