@@ -36,3 +36,5 @@ SwipeInteraction = Marionette.Behavior.extend({
         this.screenEvent.set('endX', screenX);
     }
 });
+
+module.exports = SwipeInteraction;
