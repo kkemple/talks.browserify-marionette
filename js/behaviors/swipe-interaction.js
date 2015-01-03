@@ -33,7 +33,7 @@ SwipeInteraction = Marionette.Behavior.extend({
         var screenX = (e.type === 'touchend') ?
                 e.originalEvent.changedTouches[0].screenX :
                 e.screenX;
-        this.screenEvent.set('endX', screenX);
+        this.swipeEvent.set('endX', screenX);
     }
 });
 
