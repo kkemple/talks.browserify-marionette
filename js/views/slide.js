@@ -3,7 +3,7 @@
 var Marionette = require('../libs/marionette'),
     templates = require('../config/templates'),
     hljs = require('highlight.js'),
-    ScreenEvent = require('../models/screen-event'),
+    SwipeBehavior = require('../behaviors/swipe-interaction'),
     Slide;
 
 
@@ -22,13 +22,12 @@ Slide = Marionette.ItemView.extend({
     },
 
     /**
-     * Set up event handlers for when we get mouse action
+     * Handle swipe interaction
      */
-    events: {
-        'touchstart': 'startScreenInteraction',
-        'touchend': 'stopScreenInteraction',
-        'mousedown': 'startScreenInteraction',
-        'mouseup': 'stopScreenInteraction'
+    behaviors: {
+        SwipeBehavior: {
+            behaviorClass: SwipeBehavior
+        }
     },
 
     /**
@@ -38,8 +37,6 @@ Slide = Marionette.ItemView.extend({
     initialize: function() {
         if (this.model.get('active')) this.$el.toggleClass('active');
         if (this.model.get('titleSlide')) this.$el.addClass('title-slide');
-
-        this.screenEvent = new ScreenEvent();
     },
 
     /**
@@ -77,30 +74,6 @@ Slide = Marionette.ItemView.extend({
             this.steps.slice(this.stepIndex, idx).fadeIn();
         }
         this.stepIndex = idx;
-    },
-
-    /**
-     * When we get a mousedown/touchstart event, set the starting X
-     * coordinate so we can process the interaction once the end event is fired
-     */
-    startScreenInteraction: function(e) {
-        var screenX = (e.type === 'touchstart') ?
-                e.originalEvent.changedTouches[0].screenX :
-                e.screenX;
-        this.screenEvent.set('startX', screenX);
-    },
-
-    /**
-     * When we get a mouseup/touchend event, set the ending X
-     * coordinate so we can process the interaction and determine
-     * if we care about the screen event, all logic for that
-     * lives in the screen event model
-     */
-    stopScreenInteraction: function(e) {
-        var screenX = (e.type === 'touchend') ?
-                e.originalEvent.changedTouches[0].screenX :
-                e.screenX;
-        this.screenEvent.set('endX', screenX);
     }
 });
 

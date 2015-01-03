@@ -7,6 +7,7 @@ var Marionette = require('../libs/marionette'),
     slidesConfig = require('../config/slides'),
     PresentationView = require('../views/presentation'),
     vent = require('../config/events'),
+    commands = require('../config/commands'),
     PresentationModule;
 
 
@@ -49,7 +50,7 @@ PresentationModule = Marionette.Module.extend({
     onStart: function() {
         this._started = !this._started;
         this.view = new PresentationView({ collection: this.slides });
-        vent.on('presentation:step', this._onStepEvent.bind(this));
+        commands.setHandler('presentation:step', this._onStepEvent.bind(this));
         vent.trigger('app:screen', this.view);
 
         $(document).on('keyup', this._onKeyboardEvent.bind(this));
@@ -64,7 +65,7 @@ PresentationModule = Marionette.Module.extend({
     onStop: function() {
         this._started = !this._started;
         this.view.destroy();
-        vent.off('presentation:step');
+        commands.removeHandler('presentation:step');
 
         $(document).off('keyup', this._onKeyboardEvent.bind(this));
     },

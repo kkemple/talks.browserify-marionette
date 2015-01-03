@@ -12,12 +12,11 @@ Slide = Marionette.ItemView.extend({
     template: function(modelAttrs) { return templates[modelAttrs.id]; },
     events: { ... },
     modelEvents: { ... },
+    behaviors: { ... },
     initialize: function() { ... },
     onRender: function() { ... },
     transition: function() { ... },
-    step: function() { ... },
-    startScreenInteraction: { ... },
-    stopScreenInteraction: { ... }
+    step: function() { ... }
 });
 
 module.exports = Slide;
