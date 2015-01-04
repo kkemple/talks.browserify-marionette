@@ -1,6 +1,8 @@
+'use strict';
+
 var Marionette = require('../libs/marionette'),
     SwipeEvent = require('../models/swipe-event'),
-    ScreenInteraction;
+    SwipeInteraction;
 
 SwipeInteraction = Marionette.Behavior.extend({
     events: {
@@ -13,7 +15,7 @@ SwipeInteraction = Marionette.Behavior.extend({
     },
 
     /**
-     * When we get a mousedown/touchstart event, set the starting X
+     * When we get a touchstart event, set the starting X
      * coordinate so we can process the interaction once the end event is fired
      */
     _onTouchStart: function(e) {
@@ -24,7 +26,7 @@ SwipeInteraction = Marionette.Behavior.extend({
     },
 
     /**
-     * When we get a mouseup/touchend event, set the ending X
+     * When we get a touchend event, set the ending X
      * coordinate so we can process the interaction and determine
      * if we care about the screen event, all logic for that
      * lives in the screen event model

@@ -35,7 +35,7 @@ Slide = Marionette.ItemView.extend({
      * If the model's `titleSlide` prop is true, add `title-slide` class
      */
     initialize: function() {
-        if (this.model.get('active')) this.$el.toggleClass('active');
+        if (this.model.get('active')) this.transition();
         if (this.model.get('titleSlide')) this.$el.addClass('title-slide');
     },
 
@@ -45,23 +45,26 @@ Slide = Marionette.ItemView.extend({
     onRender: function() {
         if (this.model.get('steps')) {
             this.stepIndex = 0;
-            this.steps = this.$('.steps').children().hide();
+            this.$steps = this.$('.steps').children().hide();
         }
 
         // check view for a code block, if found, wrap it up!
-        var codeBlock = this.$('code');
-        if (codeBlock.length) hljs.highlightBlock(codeBlock[0]);
+        var $codeBlock = this.$('code');
+        if ($codeBlock.length) hljs.highlightBlock($codeBlock[0]);
     },
 
     /**
      * Transitions the visual display of the slide
+     * Notice we just toggle a class, if you want animations use tranistions
+     * You could also add a .once to the el so you can do something when transition is done
      */
     transition: function() {
-        this.$el.toggleClass('active');
+        this.$el.toggleClass('active', this.model.get('active'));
     },
 
     /**
-     * Transitions the visual display of the previous/next step in the bullet points
+     * Transitions the visual display of the previous/next step in the bullet points for the slide
+     * (if there are any)
      */
     step: function() {
         var idx;
@@ -69,9 +72,9 @@ Slide = Marionette.ItemView.extend({
         idx = this.model.get('index');
         if (idx === this.stepIndex) return;
         if (idx < this.stepIndex) {
-            this.steps.slice(idx, this.stepIndex).fadeOut();
+            this.$steps.slice(idx, this.stepIndex).fadeOut();
         } else {
-            this.steps.slice(this.stepIndex, idx).fadeIn();
+            this.$steps.slice(this.stepIndex, idx).fadeIn();
         }
         this.stepIndex = idx;
     }

@@ -9,13 +9,8 @@ var Marionette = require('../libs/marionette'),
  */
 PresentationRouter = Marionette.AppRouter.extend({
     appRoutes: {
+        '': 'stepTo',
         'slides/:id': 'stepTo'
-    },
-    routes: {
-        '': '_init'
-    },
-    _init: function() {
-        this.navigate('slides/1');
     }
 });
 

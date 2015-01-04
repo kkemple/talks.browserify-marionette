@@ -4,9 +4,9 @@ module.exports = {
             'dist/js/app.js': ['js/**/*.js']
         },
         options: {
-            // browserifyOptions: {
-            //     debug: true
-            // },
+            browserifyOptions: {
+                debug: true
+            },
             transform: ['hbsfy']
         }
     }
