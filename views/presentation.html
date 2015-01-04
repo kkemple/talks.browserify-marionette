@@ -2,11 +2,17 @@
 
 <span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/marionette'</span>),
     Slide = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./slide'</span>),
-    Presentation;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The view that holds all slide views, really just an organization wrapper</p></div></div><div class="code"><div class="wrapper">Presentation = Marionette.CompositeView.extend({
+    KeyboardInteraction = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../behaviors/keyboard-interaction'</span>),
+    Presentation;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The view that holds all slide views</p></div></div><div class="code"><div class="wrapper">Presentation = Marionette.CompositeView.extend({
     template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../partials/presentation.hbs'</span>),
     className: <span class="hljs-string">'presentation'</span>,
     childView: Slide,
-    childViewContainer: <span class="hljs-string">'.slides'</span>
+    childViewContainer: <span class="hljs-string">'.slides'</span>,
+    behaviors: {
+        KeyboardInteraction: {
+            behaviorClass: KeyboardInteraction
+        }
+    }
 });
 
 module.exports = Presentation;</div></div></div></div></body></html>

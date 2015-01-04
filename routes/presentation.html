@@ -4,13 +4,8 @@
     PresentationRouter;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The router for our presentation module,
 a good rule of thumb is to have one router per module</p></div></div><div class="code"><div class="wrapper">PresentationRouter = Marionette.AppRouter.extend({
     appRoutes: {
+        <span class="hljs-string">''</span>: <span class="hljs-string">'stepTo'</span>,
         <span class="hljs-string">'slides/:id'</span>: <span class="hljs-string">'stepTo'</span>
-    },
-    routes: {
-        <span class="hljs-string">''</span>: <span class="hljs-string">'_init'</span>
-    },
-    _init: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">this</span>.navigate(<span class="hljs-string">'slides/1'</span>);
     }
 });
 

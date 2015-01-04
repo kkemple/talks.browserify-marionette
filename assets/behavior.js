@@ -65,6 +65,26 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
               "foldPrefix": "^",
               "name": "JavaScript"
             },
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/behaviors/keyboard-interaction.js",
+            "projectPath": "js/behaviors/keyboard-interaction.js",
+            "targetPath": "behaviors/keyboard-interaction",
+            "pageTitle": "behaviors/keyboard-interaction",
+            "title": "keyboard-interaction"
+          },
+          "depth": 2,
+          "outline": []
+        }, {
+          "type": "file",
+          "data": {
+            "language": {
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
+            },
             "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/behaviors/swipe-interaction.js",
             "projectPath": "js/behaviors/swipe-interaction.js",
             "targetPath": "behaviors/swipe-interaction",
@@ -157,15 +177,19 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "type": "file",
           "data": {
             "language": {
-              "nameMatchers": [".md", ".markdown", ".mkd", ".mkdn", ".mdown"],
-              "commentsOnly": true,
-              "name": "Markdown"
+              "nameMatchers": [".js"],
+              "pygmentsLexer": "javascript",
+              "multiLineComment": ["/*", "*", "*/"],
+              "singleLineComment": ["//"],
+              "ignorePrefix": "}",
+              "foldPrefix": "^",
+              "name": "JavaScript"
             },
-            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/readme.md",
-            "projectPath": "js/config/readme.md",
-            "targetPath": "config/readme",
-            "pageTitle": "config/readme",
-            "title": "readme"
+            "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/js/config/reqres.js",
+            "projectPath": "js/config/reqres.js",
+            "targetPath": "config/reqres",
+            "pageTitle": "config/reqres",
+            "title": "reqres"
           },
           "depth": 2,
           "outline": []
