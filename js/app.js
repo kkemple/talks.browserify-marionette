@@ -6,7 +6,7 @@ var Marionette = require('./libs/marionette'),
 // Create the application instance
 app = new Marionette.Application({
     regions: {
-        mainRegion: '#app'
+        mainRegion: '[data-app="presentation"]'
     }
 });
 

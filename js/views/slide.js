@@ -3,7 +3,7 @@
 var Marionette = require('../libs/marionette'),
     templates = require('../config/templates'),
     hljs = require('highlight.js'),
-    SwipeBehavior = require('../behaviors/swipe-interaction'),
+    SwipeInteraction = require('../behaviors/swipe-interaction'),
     Slide;
 
 
@@ -25,8 +25,8 @@ Slide = Marionette.ItemView.extend({
      * Handle swipe interaction
      */
     behaviors: {
-        SwipeBehavior: {
-            behaviorClass: SwipeBehavior
+        SwipeInteraction: {
+            behaviorClass: SwipeInteraction
         }
     },
 

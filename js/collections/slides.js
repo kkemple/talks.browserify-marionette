@@ -2,7 +2,6 @@
 
 var Slide = require('../models/slide'),
     Backbone = require('../libs/backbone'),
-    vent = require('../config/events'),
     commands = require('../config/commands'),
     Slides;
 
