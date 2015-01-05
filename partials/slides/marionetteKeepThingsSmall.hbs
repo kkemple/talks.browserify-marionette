@@ -4,15 +4,17 @@
 /* js/views/slide.js */
 
 var Marionette = require('../libs/marionette'),
+    SwipeInteraction = require('../behaviors/swipe-interaction'),
+    SwipeEvent = require('../models/swipe-event'),
     templates = require('../config/templates'),
     hljs = require('highlight.js'), // NPM module
     Slide;
 
 Slide = Marionette.ItemView.extend({
-    template: function(modelAttrs) { return templates[modelAttrs.id]; },
     events: { ... },
     modelEvents: { ... },
     behaviors: { ... },
+    template: function(modelAttrs) { ... },
     initialize: function() { ... },
     onRender: function() { ... },
     transition: function() { ... },

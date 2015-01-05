@@ -61,6 +61,17 @@ PresentationModule = Marionette.Module.extend({
      * this is our handler for that event
      */
     _onStep: function(action) {
+        if (action !== 'stepBackward' &&
+                action !== 'stepForward') {
+
+            var errorMessage = '' +
+                    'command: presentation:step ' +
+                    ':: parameter must be either' +
+                    ' \'stepBackward\' or \'stepForward\'';
+
+            throw new Error(errorMessage);
+        }
+
         this.slides[action]();
     },
 

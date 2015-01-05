@@ -12,11 +12,27 @@ Presentation = Marionette.CompositeView.extend({
     template: require('../../partials/presentation.hbs'),
     className: 'presentation',
     childView: Slide,
-    childViewContainer: '.slides',
+    childViewContainer: '[data-view="child-container"]',
     behaviors: {
         KeyboardInteraction: {
             behaviorClass: KeyboardInteraction
         }
+    },
+
+    /**
+     * listen for the `keyboard:back` method trigger
+     * from our KeyboardInteraction behavior
+     */
+    onKeyboardBack: function() {
+        this.collection.stepBackward();
+    },
+
+    /**
+     * listen for the `keyboard:forward` method trigger
+     * from our KeyboardInteraction behavior
+     */
+    onKeyboardForward: function() {
+        this.collection.stepForward();
     }
 });
 

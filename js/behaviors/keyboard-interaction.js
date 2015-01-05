@@ -28,14 +28,16 @@ KeyboardInteraction = Marionette.Behavior.extend({
             // For left and up, step backward
             case 37:
             case 38:
-                this.view.collection.stepBackward();
+                this.view.trigger('keyboard:back');
+                this.view.triggerMethod('keyboard:back');
                 e.preventDefault();
                 break;
 
             // For right and down, step forward
             case 39:
             case 40:
-                this.view.collection.stepForward();
+                this.view.trigger('keyboard:forward');
+                this.view.triggerMethod('keyboard:forward');
                 e.preventDefault();
                 break;
             default:

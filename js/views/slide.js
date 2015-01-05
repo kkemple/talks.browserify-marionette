@@ -1,24 +1,26 @@
 'use strict';
 
 var Marionette = require('../libs/marionette'),
+    SwipeInteraction = require('../behaviors/swipe-interaction'),
+    SwipeEvent = require('../models/swipe-event'),
     templates = require('../config/templates'),
     hljs = require('highlight.js'),
-    SwipeInteraction = require('../behaviors/swipe-interaction'),
     Slide;
-
 
 /**
  * The view layer for each slide, minimal functionality
  * Responsible for updating steps (bullet points) when the backing model's index changes
  */
 Slide = Marionette.ItemView.extend({
-    template: function(modelAttrs) {
-        return templates[modelAttrs.id];
-    },
     className: 'slide',
+
     modelEvents: {
         'change:active': 'transition',
         'change:index': 'step'
+    },
+
+    template: function(modelAttrs) {
+        return templates[modelAttrs.id];
     },
 
     /**
@@ -26,7 +28,8 @@ Slide = Marionette.ItemView.extend({
      */
     behaviors: {
         SwipeInteraction: {
-            behaviorClass: SwipeInteraction
+            behaviorClass: SwipeInteraction,
+            model: new SwipeEvent()
         }
     },
 

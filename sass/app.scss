@@ -66,12 +66,14 @@ body {
                 }
 
                 pre {
+                    margin: 0;
 
                     code {
                         display: block;
                         font-size: 2vw;
                         text-shadow: none;
                         background-color: transparent !important;
+                        padding: 0;
                     }
                 }
 

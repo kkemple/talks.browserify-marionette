@@ -5,17 +5,17 @@ var app = require('./app'),
     commands = require('./config/commands'),
     PresentationModule = require('./modules/presentation');
 
-// add a listener for the `app:screen` event
+// add a handler for the `app:screen:show` event
 commands.setHandler('app:screen:show', function(view) {
     app.mainRegion.show(view);
 });
 
-// add a listener for the `app:setTitle` event
-commands.setHandler('app:setTitle', function(title) {
+// add a handler for the `app:title` event
+commands.setHandler('app:title', function(title) {
     document.title = title;
 });
 
-// add a listener for the `app:navigate` event
+// add a handler for the `app:navigate` event
 commands.setHandler('app:navigate', function(path, trigger) {
     Backbone.history.navigate(path, { trigger: (trigger || false) });
 });

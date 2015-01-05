@@ -6,7 +6,7 @@ var Slide = require('../models/slide'),
     Slides;
 
 /**
- * The collection that is home to all slides in the app, instantiated in `js/main.js`
+ * The collection that is home to all slides in the app
  */
 Slides = Backbone.Collection.extend({
     model: Slide,
@@ -80,7 +80,7 @@ Slides = Backbone.Collection.extend({
         this.current = this.at(index);
         this.current.set('active', true);
         commands.execute('app:navigate', 'slides/' + (this.index + 1));
-        commands.execute('app:setTitle', this.current.get('title'));
+        commands.execute('app:title', this.current.get('title'));
     }
 });
 

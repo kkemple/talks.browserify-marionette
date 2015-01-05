@@ -7,11 +7,9 @@ var Marionette = require('./libs/marionette'),
 
 app = new Marionette.Application({
     regions: {
-        mainRegion: '#app'
+        mainRegion: '[data-app="presentation"]'
     }
 });
-
-// handle any app configuration
 
 module.exports = app;
         </code>
