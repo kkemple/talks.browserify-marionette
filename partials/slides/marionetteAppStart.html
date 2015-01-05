@@ -9,9 +9,9 @@ var app = require('./app'),
     commands = require('./config/commands'),
     PresentationModule = require('./modules/presentation');
 
-// add any app level event listeners
+// add any app level handlers/listeners
 commands.setHandler('app:screen:show', function(view) { ... });
-commands.setHandler('app:setTitle', function(title) { ... });
+commands.setHandler('app:title', function(title) { ... });
 commands.setHandler('app:navigate', function(path, trigger) { ... });
 
 // add all modules

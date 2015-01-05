@@ -27,6 +27,17 @@ remove any event listeners/handlers</p></div></div><div class="code"><div class=
         commands.removeHandler(<span class="hljs-string">'presentation:step'</span>);
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Our module is concerned with the &#39;presentation:step&#39; event
 this is our handler for that event</p></div></div><div class="code"><div class="wrapper">    _onStep: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(action)</span> {</span>
+        <span class="hljs-keyword">if</span> (action !== <span class="hljs-string">'stepBackward'</span> &amp;&amp;
+                action !== <span class="hljs-string">'stepForward'</span>) {
+
+            <span class="hljs-keyword">var</span> errorMessage = <span class="hljs-string">''</span> +
+                    <span class="hljs-string">'command: presentation:step '</span> +
+                    <span class="hljs-string">':: parameter must be either'</span> +
+                    <span class="hljs-string">' \'stepBackward\' or \'stepForward\''</span>;
+
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(errorMessage);
+        }
+
         <span class="hljs-keyword">this</span>.slides[action]();
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The handler for any backbone route change,
 we want to know if our router is concerned with the route,

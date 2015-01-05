@@ -7,11 +7,17 @@
     template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../partials/presentation.hbs'</span>),
     className: <span class="hljs-string">'presentation'</span>,
     childView: Slide,
-    childViewContainer: <span class="hljs-string">'.slides'</span>,
+    childViewContainer: <span class="hljs-string">'[data-view="child-container"]'</span>,
     behaviors: {
         KeyboardInteraction: {
             behaviorClass: KeyboardInteraction
         }
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>listen for the <code>keyboard:back</code> method trigger
+from our KeyboardInteraction behavior</p></div></div><div class="code"><div class="wrapper">    onKeyboardBack: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">this</span>.collection.stepBackward();
+    },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>listen for the <code>keyboard:forward</code> method trigger
+from our KeyboardInteraction behavior</p></div></div><div class="code"><div class="wrapper">    onKeyboardForward: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        <span class="hljs-keyword">this</span>.collection.stepForward();
     }
 });
 

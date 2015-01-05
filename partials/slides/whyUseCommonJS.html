@@ -7,11 +7,9 @@ var Marionette = require('./libs/marionette'),
 
 app = new Marionette.Application({
     regions: {
-        mainRegion: '#app'
+        mainRegion: '[data-app="presentation"]'
     }
 });
-
-// handle any app configuration
 
 module.exports = app;
         <span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>
