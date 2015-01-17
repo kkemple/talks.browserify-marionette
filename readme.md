@@ -28,7 +28,6 @@ The actual slides for the presentation can be viewed at [http://kkemple.github.i
     - Keeping Things Small
     - Organizing Templates
     - What About Modules?
-    - Setting Up Routing
 
 - Getting Really Dry
     - Turning code in to NPM modules
