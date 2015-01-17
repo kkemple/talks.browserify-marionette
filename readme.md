@@ -26,7 +26,7 @@ The actual slides for the presentation can be viewed at [http://kkemple.github.i
 - Browserify and Marionette
     - Configuration and Initialization
     - Keeping Things Small
-    - Pre-compiling Templates
+    - Organizing Templates
     - What About Modules?
     - Setting Up Routing
 
