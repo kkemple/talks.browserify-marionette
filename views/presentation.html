@@ -1,13 +1,18 @@
 <!DOCTYPE html><html lang="en"><head><title>views/presentation</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="views/presentation"><meta name="groc-project-path" content="js/views/presentation.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/views/presentation.js">js/views/presentation.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-pi">'use strict'</span>;
 
-<span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/marionette'</span>),
+<span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../shims/marionette'</span>),
     Slide = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./slide'</span>),
     KeyboardInteraction = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../behaviors/keyboard-interaction'</span>),
+    template = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../partials/presentation.hbs'</span>),
     Presentation;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>The view that holds all slide views</p></div></div><div class="code"><div class="wrapper">Presentation = Marionette.CompositeView.extend({
-    template: <span class="hljs-built_in">require</span>(<span class="hljs-string">'../../partials/presentation.hbs'</span>),
+    template: template,
+
     className: <span class="hljs-string">'presentation'</span>,
+
     childView: Slide,
+
     childViewContainer: <span class="hljs-string">'[data-view="child-container"]'</span>,
+
     behaviors: {
         KeyboardInteraction: {
             behaviorClass: KeyboardInteraction

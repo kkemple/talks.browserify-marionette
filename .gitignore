@@ -1,5 +1,5 @@
 node_modules
-libs
+vendor
 dist
 .sass-cache
 *.DS_Store

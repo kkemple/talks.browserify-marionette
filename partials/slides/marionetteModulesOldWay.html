@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head><title>partials/slides/marionetteModulesOldWay</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../../"><meta name="groc-document-path" content="partials/slides/marionetteModulesOldWay"><meta name="groc-project-path" content="partials/slides/marionetteModulesOldWay.hbs"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../../assets/style.css"><script type="text/javascript" src="../../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/partials/slides/marionetteModulesOldWay.hbs">partials/slides/marionetteModulesOldWay.hbs</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"code-snippet"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">pre</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">code</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs javascript"</span>&gt;</span>
+NS.App.module('Views',
+        function(Mod, App, Backbone, Marionette, _, $) {
+
+    Mod.ExampleView = Marionette.ItemView.extend({
+        template: '...',
+        modelEvents: { ... },
+        someFunc: function() { ... }
+    });
+});
+
+NS.App.module('SomeModule',
+        function(Mod, App, Backbone, Marionette, _, $), {
+
+    App.addInitializer(function() {
+        var view = new App.Views.ExampleView({
+            model: someModel
+        });
+        someRegion.show(view);
+    });
+});
+        <span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></div></div></div></div></body></html>

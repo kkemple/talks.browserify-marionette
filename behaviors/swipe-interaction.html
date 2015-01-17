@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><title>behaviors/swipe-interaction</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="behaviors/swipe-interaction"><meta name="groc-project-path" content="js/behaviors/swipe-interaction.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/behaviors/swipe-interaction.js">js/behaviors/swipe-interaction.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-pi">'use strict'</span>;
 
-<span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/marionette'</span>),
-    Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/backbone'</span>),
+<span class="hljs-keyword">var</span> Marionette = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../shims/marionette'</span>),
+    Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../shims/backbone'</span>),
     SwipeEvent = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../models/swipe-event'</span>),
     SwipeInteraction;
 
@@ -15,18 +15,14 @@ SwipeInteraction = Marionette.Behavior.extend({
         <span class="hljs-string">'touchend'</span>: <span class="hljs-string">'_onTouchEnd'</span>
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>When we get a touchstart event, set the starting X
 coordinate so we can process the interaction once the end event is fired</p></div></div><div class="code"><div class="wrapper">    _onTouchStart: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchstart'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
-                e.screenX;
-        <span class="hljs-keyword">this</span>.options.model.set(<span class="hljs-string">'startX'</span>, screenX);
+        <span class="hljs-keyword">this</span>.view.triggerMethod(<span class="hljs-string">'touchStart'</span>, e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX);
+        <span class="hljs-keyword">this</span>.options.model.set(<span class="hljs-string">'startX'</span>, e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX);
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>When we get a touchend event, set the ending X
 coordinate so we can process the interaction and determine
 if we care about the screen event, all logic for that
 lives in the screen event model</p></div></div><div class="code"><div class="wrapper">    _onTouchEnd: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-        <span class="hljs-keyword">var</span> screenX = (e.type === <span class="hljs-string">'touchend'</span>) ?
-                e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX :
-                e.screenX;
-        <span class="hljs-keyword">this</span>.options.model.set(<span class="hljs-string">'endX'</span>, screenX);
+        <span class="hljs-keyword">this</span>.view.triggerMethod(<span class="hljs-string">'touchEnd'</span>, e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX);
+        <span class="hljs-keyword">this</span>.options.model.set(<span class="hljs-string">'endX'</span>, e.originalEvent.changedTouches[<span class="hljs-number">0</span>].screenX);
     }
 });
 

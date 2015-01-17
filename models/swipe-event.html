@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><title>models/swipe-event</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content="../"><meta name="groc-document-path" content="models/swipe-event"><meta name="groc-project-path" content="js/models/swipe-event.js"><meta name="groc-github-url" content="https://github.com/kkemple/talks.browserify-marionette"><link rel="stylesheet" type="text/css" media="all" href="../assets/style.css"><script type="text/javascript" src="../assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/kkemple/talks.browserify-marionette/blob/master/js/models/swipe-event.js">js/models/swipe-event.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper"><span class="hljs-pi">'use strict'</span>;
 
-<span class="hljs-keyword">var</span> Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/backbone'</span>),
-    _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../libs/underscore'</span>),
+<span class="hljs-keyword">var</span> Backbone = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../shims/backbone'</span>),
+    _ = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../shims/underscore'</span>),
     commands = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/commands'</span>),
     SwipeEvent;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Used to help manage touch/drag events</p></div></div><div class="code"><div class="wrapper">SwipeEvent = Backbone.Model.extend({
     defaults: {
@@ -9,10 +9,10 @@
         endX: <span class="hljs-number">0</span>
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Listen to the endX prop for changes,
 process the full interaction</p></div></div><div class="code"><div class="wrapper">    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-        <span class="hljs-keyword">this</span>.listenTo(<span class="hljs-keyword">this</span>, <span class="hljs-string">'change:endX'</span>, _.throttle(<span class="hljs-keyword">this</span>.processInteraction, <span class="hljs-number">300</span>));
+        <span class="hljs-keyword">this</span>.on(<span class="hljs-string">'change:endX'</span>, _.throttle(<span class="hljs-keyword">this</span>.processInteraction, <span class="hljs-number">300</span>));
     },</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Responsible for determining if the interaction was
 significant enough to respond to, if so fire presentation
-level step event</p></div></div><div class="code"><div class="wrapper">    processInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+level step command</p></div></div><div class="code"><div class="wrapper">    processInteraction: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
         <span class="hljs-keyword">var</span> action, startX, endX;
 
         startX = <span class="hljs-keyword">this</span>.get(<span class="hljs-string">'startX'</span>);
