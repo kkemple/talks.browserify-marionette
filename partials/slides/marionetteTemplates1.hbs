@@ -6,13 +6,13 @@
 grunt.registerTask('compile-templates', function() {
     var js = '';
     grunt.file.recurse('partials/slides/',
-            function(abspath, rootdir, subdir, filename) {
+            function(abspath, rootdir, subdir, file) {
 
-        var file = filename.replace('.hbs', '');
+        var filename = file.replace('.hbs', '');
         js += 'module.exports.' +
-                file +
+                filename +
                 ' = require(\'../../../partials/slides/' +
-                file +
+                filename +
                 '.hbs\');' +
                 '\n';
     });

@@ -32,5 +32,10 @@ module.exports = [
     { id: 'marionetteTemplates2', title: 'Browserify + Marionette - Pre-compiling Templates - 2' },
     { id: 'marionetteModulesTitle', title: 'Browserify + Marionette - What About Modules ?', titleSlide: true },
     { id: 'marionetteModulesOldWay', title: 'Browserify + Marionette - How It Was' },
-    { id: 'marionetteModules1', title: 'Browserify + Marionette - Put To Better Use' }
+    { id: 'marionetteModules1', title: 'Browserify + Marionette - Put To Better Use' },
+    { id: 'soDry', title: 'Browserify + Marionette - Getting Really DRY', titleSlide: true },
+    { id: 'soDry1', title: 'Browserify + Marionette - Public NPM' },
+    { id: 'soDry2', title: 'Browserify + Marionette - Private NPM' },
+    { id: 'moar', title: 'Browserify + Marionette - MOAR!!', titleSlide: true },
+    { id: 'resources', title: 'Browserify + Marionette - Resources', steps: 4 }
 ];
