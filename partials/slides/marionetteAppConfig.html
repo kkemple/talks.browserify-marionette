@@ -3,12 +3,12 @@
         <span class="hljs-tag">&lt;<span class="hljs-title">code</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"hljs javascript"</span>&gt;</span>
 /* js/app.js */
 
-var Marionette = require('./libs/marionette'),
+var Marionette = require('./shims/marionette'),
     app;
 
 app = new Marionette.Application({
     regions: {
-        mainRegion: '#app'
+        mainRegion: '[data-app="presentation"]'
     }
 });
 

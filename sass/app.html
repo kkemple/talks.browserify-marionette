@@ -3,12 +3,10 @@
 <span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"font-awesome/font-awesome"</span>;</span>
 <span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"fonts"</span>;</span>
 <span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"globals"</span>;</span>
-<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"mixins"</span>;</span>
-<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"slide"</span>;</span>
 
 <span class="hljs-tag">body</span> {
     <span class="hljs-attribute">background-color</span><span class="hljs-value">: $body-bg;</span>
-    <span class="hljs-attribute">color</span><span class="hljs-value">: $text;</span>
+    <span class="hljs-attribute">color</span><span class="hljs-value">: $text-color;</span>
     <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">4</span>px <span class="hljs-number">4</span>px <span class="hljs-number">0</span> <span class="hljs-hexcolor">#bdc3c7</span>;</span>
     <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">'montserratbold'</span>;</span>
 }
@@ -35,8 +33,8 @@
 
                 &amp;<span class="hljs-class">.title-slide</span> {
                     <span class="hljs-attribute">background-color</span><span class="hljs-value">: $title-slide-bg;</span>
-                    <span class="hljs-attribute">color</span><span class="hljs-value">: $title-slide-text;</span>
-                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">6</span>px <span class="hljs-number">6</span>px <span class="hljs-number">0</span> <span class="hljs-hexcolor">#c0392b</span>;</span>
+                    <span class="hljs-attribute">color</span><span class="hljs-value">: $title-slide-text-color;</span>
+                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: <span class="hljs-number">6</span>px <span class="hljs-number">6</span>px <span class="hljs-number">0</span> $title-slide-text-shadow-color;</span>
                 }
 
                 &amp;<span class="hljs-class">.active</span> {
@@ -57,11 +55,17 @@
                     <span class="hljs-attribute">margin-top</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
                     <span class="hljs-attribute">padding</span><span class="hljs-value">: <span class="hljs-number">0</span>;</span>
                     <span class="hljs-attribute">list-style</span><span class="hljs-value">: none;</span>
-                    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">5</span>vw;</span>
+                    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">3</span>vw;</span>
                     <span class="hljs-attribute">text-align</span><span class="hljs-value">: center;</span>
+                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: none;</span>
 
                     <span class="hljs-tag">li</span> {
                         <span class="hljs-attribute">margin-bottom</span><span class="hljs-value">: <span class="hljs-number">3</span>vh;</span>
+
+                        <span class="hljs-tag">a</span> {
+                            <span class="hljs-attribute">color</span><span class="hljs-value">: $text-shadow-color;</span>
+                            <span class="hljs-attribute">text-decoration</span><span class="hljs-value">: none;</span>
+                        }
                     }
                 }
 
@@ -79,6 +83,48 @@
 
                 <span class="hljs-tag">img</span> {
                     <span class="hljs-attribute">max-width</span><span class="hljs-value">: <span class="hljs-number">60</span>vw;</span>
+                }
+
+                <span class="hljs-tag">blockquote</span> {
+                    <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">'montserratregular'</span>;</span>
+                    <span class="hljs-attribute">border-left</span><span class="hljs-value">: <span class="hljs-number">20</span>px solid $text-color;</span>
+                    <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">35</span>px;</span>
+                    <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">5</span>vw;</span>
+                    <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">70</span>%;</span>
+                    <span class="hljs-attribute">text-shadow</span><span class="hljs-value">: none;</span>
+                    <span class="hljs-attribute">color</span><span class="hljs-value">: $blockquote-text-color;</span>
+                    <span class="hljs-attribute">font-style</span><span class="hljs-value">: italic;</span>
+
+                    <span class="hljs-tag">p</span> {
+                        &amp;<span class="hljs-pseudo">:before</span>, &amp;<span class="hljs-pseudo">:after</span> {
+                            <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">'FontAwesome'</span>;</span>
+                            <span class="hljs-attribute">font-weight</span><span class="hljs-value">: normal;</span>
+                            <span class="hljs-attribute">font-style</span><span class="hljs-value">: normal;</span>
+                            <span class="hljs-attribute">display</span><span class="hljs-value">: inline-block;</span>
+                            <span class="hljs-attribute">text-decoration</span><span class="hljs-value">: inherit;</span>
+                            <span class="hljs-attribute">font-size</span><span class="hljs-value">: <span class="hljs-number">3.5</span>vw;</span>
+                            <span class="hljs-attribute">vertical-align</span><span class="hljs-value">: top;</span>
+                            <span class="hljs-attribute">padding-top</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
+                        }
+
+                        &amp;<span class="hljs-pseudo">:before</span> {
+                            <span class="hljs-attribute">content</span><span class="hljs-value">: <span class="hljs-string">'\f10d'</span>;</span>
+                            <span class="hljs-attribute">padding-right</span><span class="hljs-value">: <span class="hljs-number">15</span>px;</span>
+                        }
+
+                        &amp;<span class="hljs-pseudo">:after</span> {
+                            <span class="hljs-attribute">content</span><span class="hljs-value">: <span class="hljs-string">'\f10e'</span>;</span>
+                            <span class="hljs-attribute">padding-left</span><span class="hljs-value">: <span class="hljs-number">15</span>px;</span>
+                        }
+                    }
+
+                    <span class="hljs-class">.quote-highlight</span> {
+                        <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-hexcolor">#f5871f</span>;</span>
+                    }
+
+                    <span class="hljs-class">.quote-highlight-string</span> {
+                        <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-hexcolor">#718c00</span>;</span>
+                    }
                 }
             }
         }

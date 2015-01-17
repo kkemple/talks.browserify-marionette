@@ -4,8 +4,8 @@
     PresentationView = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../views/presentation'</span>),
     commands = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config/commands'</span>),
     PresentationController;</div></div></div><div class="segment"><div class="comments "><div class="wrapper"><p>Simple controller for our presentation router</p></div></div><div class="code"><div class="wrapper">PresentationController = Marionette.Controller.extend({
-    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(options)</span> {</span>
-        <span class="hljs-keyword">this</span>.slides = options.slides;
+    initialize: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(opts)</span> {</span>
+        <span class="hljs-keyword">this</span>.slides = opts.slides;
     },
     stepTo: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(id)</span> {</span>
         <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.view) {
