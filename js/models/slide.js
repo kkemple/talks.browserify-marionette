@@ -1,6 +1,6 @@
 'use strict';
 
-var Backbone = require('../libs/backbone'),
+var Backbone = require('../shims/backbone'),
     Slide;
 
 /**

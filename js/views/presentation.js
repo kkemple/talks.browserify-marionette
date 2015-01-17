@@ -1,18 +1,23 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
+var Marionette = require('../shims/marionette'),
     Slide = require('./slide'),
     KeyboardInteraction = require('../behaviors/keyboard-interaction'),
+    template = require('../../partials/presentation.hbs'),
     Presentation;
 
 /**
  * The view that holds all slide views
  */
 Presentation = Marionette.CompositeView.extend({
-    template: require('../../partials/presentation.hbs'),
+    template: template,
+
     className: 'presentation',
+
     childView: Slide,
+
     childViewContainer: '[data-view="child-container"]',
+
     behaviors: {
         KeyboardInteraction: {
             behaviorClass: KeyboardInteraction

@@ -1,7 +1,7 @@
 'use strict';
 
 var app = require('./app'),
-    Backbone = require('./libs/backbone'),
+    Backbone = require('./shims/backbone'),
     commands = require('./config/commands'),
     PresentationModule = require('./modules/presentation');
 

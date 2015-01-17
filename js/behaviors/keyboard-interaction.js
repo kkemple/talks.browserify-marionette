@@ -1,8 +1,8 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
+var Marionette = require('../shims/marionette'),
     SwipeEvent = require('../models/swipe-event'),
-    $ = require('../libs/jquery'),
+    $ = require('../shims/jquery'),
     KeyboardInteraction;
 
 KeyboardInteraction = Marionette.Behavior.extend({

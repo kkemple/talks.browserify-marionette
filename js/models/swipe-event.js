@@ -1,7 +1,7 @@
 'use strict';
 
-var Backbone = require('../libs/backbone'),
-    _ = require('../libs/underscore'),
+var Backbone = require('../shims/backbone'),
+    _ = require('../shims/underscore'),
     commands = require('../config/commands'),
     SwipeEvent;
 
@@ -19,13 +19,13 @@ SwipeEvent = Backbone.Model.extend({
      * process the full interaction
      */
     initialize: function() {
-        this.listenTo(this, 'change:endX', _.throttle(this.processInteraction, 300));
+        this.on('change:endX', _.throttle(this.processInteraction, 300));
     },
 
     /**
      * Responsible for determining if the interaction was
      * significant enough to respond to, if so fire presentation
-     * level step event
+     * level step command
      */
     processInteraction: function() {
         var action, startX, endX;

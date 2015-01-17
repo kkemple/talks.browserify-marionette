@@ -1,7 +1,7 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
-    Backbone = require('../libs/backbone'),
+var Marionette = require('../shims/marionette'),
+    Backbone = require('../shims/backbone'),
     SwipeEvent = require('../models/swipe-event'),
     SwipeInteraction;
 
@@ -20,10 +20,8 @@ SwipeInteraction = Marionette.Behavior.extend({
      * coordinate so we can process the interaction once the end event is fired
      */
     _onTouchStart: function(e) {
-        var screenX = (e.type === 'touchstart') ?
-                e.originalEvent.changedTouches[0].screenX :
-                e.screenX;
-        this.options.model.set('startX', screenX);
+        this.view.triggerMethod('touchStart', e.originalEvent.changedTouches[0].screenX);
+        this.options.model.set('startX', e.originalEvent.changedTouches[0].screenX);
     },
 
     /**
@@ -33,10 +31,8 @@ SwipeInteraction = Marionette.Behavior.extend({
      * lives in the screen event model
      */
     _onTouchEnd: function(e) {
-        var screenX = (e.type === 'touchend') ?
-                e.originalEvent.changedTouches[0].screenX :
-                e.screenX;
-        this.options.model.set('endX', screenX);
+        this.view.triggerMethod('touchEnd', e.originalEvent.changedTouches[0].screenX);
+        this.options.model.set('endX', e.originalEvent.changedTouches[0].screenX);
     }
 });
 

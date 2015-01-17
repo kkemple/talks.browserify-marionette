@@ -1,5 +1,5 @@
-var Marionette = require('../libs/marionette'),
-    Backbone = require('../libs/backbone'),
+var Marionette = require('../shims/marionette'),
+    Backbone = require('../shims/backbone'),
     PresentationRouter = require('../routes/presentation'),
     PresentationController = require('../controllers/presentation'),
     Slides = require('../collections/slides'),

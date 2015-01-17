@@ -1,0 +1,26 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+NS.App.module('Views',
+        function(Mod, App, Backbone, Marionette, _, $) {
+
+    Mod.ExampleView = Marionette.ItemView.extend({
+        template: '...',
+        modelEvents: { ... },
+        someFunc: function() { ... }
+    });
+});
+
+NS.App.module('SomeModule',
+        function(Mod, App, Backbone, Marionette, _, $), {
+
+    App.addInitializer(function() {
+        var view = new App.Views.ExampleView({
+            model: someModel
+        });
+        someRegion.show(view);
+    });
+});
+        </code>
+    </pre>
+</div>

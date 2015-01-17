@@ -1,6 +1,6 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
+var Marionette = require('../shims/marionette'),
     PresentationRouter;
 
 /**

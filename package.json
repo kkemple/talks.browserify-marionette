@@ -4,7 +4,7 @@
   "description": "A slide-show presentation about using browserify in marionette projects",
   "main": "index.html",
   "scripts": {
-    "test": "grunt test"
+    "test": "node --debug ./node_modules/.bin/grunt test"
   },
   "repository": {
     "type": "git",

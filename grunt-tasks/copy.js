@@ -16,7 +16,7 @@ module.exports = {
         dest: 'dist/fonts/'
     },
     'normalize.css': {
-        src: 'libs/normalize.css/normalize.css',
+        src: 'vendor/normalize.css/normalize.css',
         dest: 'dist/css/normalize.css'
     },
     'hljs.css': {

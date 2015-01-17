@@ -18,6 +18,7 @@ module.exports.marionetteConfigInit = require('../../../partials/slides/marionet
 module.exports.marionetteKeepThingsSmall = require('../../../partials/slides/marionetteKeepThingsSmall.hbs');
 module.exports.marionetteKeepThingsSmallTitle = require('../../../partials/slides/marionetteKeepThingsSmallTitle.hbs');
 module.exports.marionetteModules1 = require('../../../partials/slides/marionetteModules1.hbs');
+module.exports.marionetteModulesOldWay = require('../../../partials/slides/marionetteModulesOldWay.hbs');
 module.exports.marionetteModulesTitle = require('../../../partials/slides/marionetteModulesTitle.hbs');
 module.exports.marionetteTemplates1 = require('../../../partials/slides/marionetteTemplates1.hbs');
 module.exports.marionetteTemplates2 = require('../../../partials/slides/marionetteTemplates2.hbs');

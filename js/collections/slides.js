@@ -1,7 +1,7 @@
 'use strict';
 
 var Slide = require('../models/slide'),
-    Backbone = require('../libs/backbone'),
+    Backbone = require('../shims/backbone'),
     commands = require('../config/commands'),
     Slides;
 

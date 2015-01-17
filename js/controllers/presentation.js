@@ -1,6 +1,6 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
+var Marionette = require('../shims/marionette'),
     PresentationView = require('../views/presentation'),
     commands = require('../config/commands'),
     PresentationController;

@@ -1,6 +1,6 @@
 'use strict';
 
-var Marionette = require('../libs/marionette'),
+var Marionette = require('../shims/marionette'),
     SwipeInteraction = require('../behaviors/swipe-interaction'),
     SwipeEvent = require('../models/swipe-event'),
     templates = require('../config/templates'),
@@ -12,7 +12,12 @@ var Marionette = require('../libs/marionette'),
  * Responsible for updating steps (bullet points) when the backing model's index changes
  */
 Slide = Marionette.ItemView.extend({
-    className: 'slide',
+    className: function() {
+        var classes = 'slide';
+        classes += (this.model.get('titleSlide') === true) ? ' title-slide' : '';
+        classes += (this.model.get('active')) ? ' active' : '';
+        return classes;
+    },
 
     modelEvents: {
         'change:active': 'transition',
@@ -34,18 +39,9 @@ Slide = Marionette.ItemView.extend({
     },
 
     /**
-     * If the model's `active` prop is true, add `active` class
-     * If the model's `titleSlide` prop is true, add `title-slide` class
-     */
-    initialize: function() {
-        if (this.model.get('active')) this.transition();
-        if (this.model.get('titleSlide')) this.$el.addClass('title-slide');
-    },
-
-    /**
      * If the model has steps, set a `stepIndex` and add a reference to the nodes in the DOM
      */
-    onRender: function() {
+    onAttach: function() {
         if (this.model.get('steps')) {
             this.stepIndex = 0;
             this.$steps = this.$('.steps').children().hide();
