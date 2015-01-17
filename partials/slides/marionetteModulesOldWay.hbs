@@ -2,7 +2,7 @@
     <pre>
         <code class="hljs javascript">
 NS.App.module('Views',
-        function(Mod, App, Backbone, Marionette, _, $) {
+        function(Mod, App, Backbone, Marionette, $, _) {
 
     Mod.ExampleView = Marionette.ItemView.extend({
         template: '...',
@@ -12,7 +12,7 @@ NS.App.module('Views',
 });
 
 NS.App.module('SomeModule',
-        function(Mod, App, Backbone, Marionette, _, $), {
+        function(Mod, App, Backbone, Marionette, $, _), {
 
     App.addInitializer(function() {
         var view = new App.Views.ExampleView({

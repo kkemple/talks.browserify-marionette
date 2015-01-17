@@ -3,12 +3,12 @@
         <code class="hljs javascript">
 /* js/app.js */
 
-var Marionette = require('./libs/marionette'),
+var Marionette = require('./shims/marionette'),
     app;
 
 app = new Marionette.Application({
     regions: {
-        mainRegion: '#app'
+        mainRegion: '[data-app="presentation"]'
     }
 });
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var Marionette = require('../shims/marionette'),
     Backbone = require('../shims/backbone'),
     PresentationRouter = require('../routes/presentation'),

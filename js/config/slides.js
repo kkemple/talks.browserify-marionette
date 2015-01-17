@@ -6,6 +6,9 @@
 
 module.exports = [
     { id: 'entry', title: 'Browserify + Marionette = <3', titleSlide: true },
+    { id: 'followAlong', title: 'Browserify + Marionette - Follow Along', steps: 3 },
+    { id: 'whatIs', title: 'Browserify + Marionette - What Is Browserify', titleSlide: true },
+    { id: 'whatIsQuote', title: 'Browserify + Marionette - What Is Browserify - Quote' },
     { id: 'whyUse', title: 'Browserify + Marionette - Why use Browserify?', titleSlide: true },
     { id: 'whyUseCommonJS', title: 'Browserify + Marionette - CommonJS Style Modules' },
     { id: 'whyUseNpmModules', title: 'Browserify + Marionette - Access To NPM Modules' },
@@ -14,6 +17,7 @@ module.exports = [
     { id: 'gettingSetUpConsole', title: 'Browserify + Marionette - Running From the Console' },
     { id: 'gettingSetUpPackageJson', title: 'Browserify + Marionette - Configuring in package.json' },
     { id: 'gettingSetUpGrunt', title: 'Browserify + Marionette - Configuring in Gruntfile.js' },
+    { id: 'gettingSetUpShimmingCommonJSModules', title: 'Browserify + Marionette - Shimming Common JS Modules' },
     { id: 'gettingSetUpNonNpmDeps', title: 'Browserify + Marionette - Adding Non NPM Dependencies' },
     { id: 'gettingSetUpShimmingGlobals', title: 'Browserify + Marionette - Shimming Globals' },
     { id: 'gettingSetUpUnderstandingTransforms', title: 'Browserify + Marionette - Understanding Transforms' },

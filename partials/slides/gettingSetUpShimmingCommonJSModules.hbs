@@ -1,0 +1,23 @@
+<div class="code-snippet">
+    <pre>
+        <code class="hljs javascript">
+/* js/shims/jquery-backbone.js */
+Backbone    = require('backbone');
+Backbone.$  = require('jquery');
+
+/* Gruntfile.js */
+files: {
+    'dist/js/app.js': [
+        'js/shims/jquery-backbone.js',
+        'js/main.js'
+    ]
+}
+
+/* usage */
+var $ = require('jquery'),
+    _ = require('underscore'),
+    Backbone = require('backbone'),
+    Marionette = require('backbone.marionette');
+        </code>
+    </pre>
+</div>

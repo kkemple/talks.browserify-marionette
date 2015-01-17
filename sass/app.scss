@@ -3,12 +3,10 @@
 @import "font-awesome/font-awesome";
 @import "fonts";
 @import "globals";
-@import "mixins";
-@import "slide";
 
 body {
     background-color: $body-bg;
-    color: $text;
+    color: $text-color;
     text-shadow: 4px 4px 0 #bdc3c7;
     font-family: 'montserratbold';
 }
@@ -35,8 +33,8 @@ body {
 
                 &.title-slide {
                     background-color: $title-slide-bg;
-                    color: $title-slide-text;
-                    text-shadow: 6px 6px 0 #c0392b;
+                    color: $title-slide-text-color;
+                    text-shadow: 6px 6px 0 $title-slide-text-shadow-color;
                 }
 
                 &.active {
@@ -57,11 +55,17 @@ body {
                     margin-top: 0;
                     padding: 0;
                     list-style: none;
-                    font-size: 5vw;
+                    font-size: 3vw;
                     text-align: center;
+                    text-shadow: none;
 
                     li {
                         margin-bottom: 3vh;
+
+                        a {
+                            color: $text-shadow-color;
+                            text-decoration: none;
+                        }
                     }
                 }
 
@@ -79,6 +83,48 @@ body {
 
                 img {
                     max-width: 60vw;
+                }
+
+                blockquote {
+                    font-family: 'montserratregular';
+                    border-left: 20px solid $text-color;
+                    padding-left: 35px;
+                    font-size: 5vw;
+                    width: 70%;
+                    text-shadow: none;
+                    color: $blockquote-text-color;
+                    font-style: italic;
+
+                    p {
+                        &:before, &:after {
+                            font-family: 'FontAwesome';
+                            font-weight: normal;
+                            font-style: normal;
+                            display: inline-block;
+                            text-decoration: inherit;
+                            font-size: 3.5vw;
+                            vertical-align: top;
+                            padding-top: 10px;
+                        }
+
+                        &:before {
+                            content: '\f10d';
+                            padding-right: 15px;
+                        }
+
+                        &:after {
+                            content: '\f10e';
+                            padding-left: 15px;
+                        }
+                    }
+
+                    .quote-highlight {
+                        color: #f5871f;
+                    }
+
+                    .quote-highlight-string {
+                        color: #718c00;
+                    }
                 }
             }
         }

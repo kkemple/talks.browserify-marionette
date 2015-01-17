@@ -9,8 +9,8 @@ var Marionette = require('../shims/marionette'),
  * Simple controller for our presentation router
  */
 PresentationController = Marionette.Controller.extend({
-    initialize: function(options) {
-        this.slides = options.slides;
+    initialize: function(opts) {
+        this.slides = opts.slides;
     },
     stepTo: function(id) {
         if (!this.view) {
