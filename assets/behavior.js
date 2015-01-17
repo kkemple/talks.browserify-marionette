@@ -908,6 +908,111 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/moar.hbs",
+                "projectPath": "partials/slides/moar.hbs",
+                "targetPath": "partials/slides/moar",
+                "pageTitle": "partials/slides/moar",
+                "title": "moar"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/resources.hbs",
+                "projectPath": "partials/slides/resources.hbs",
+                "targetPath": "partials/slides/resources",
+                "pageTitle": "partials/slides/resources",
+                "title": "resources"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/soDry.hbs",
+                "projectPath": "partials/slides/soDry.hbs",
+                "targetPath": "partials/slides/soDry",
+                "pageTitle": "partials/slides/soDry",
+                "title": "soDry"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/soDry1.hbs",
+                "projectPath": "partials/slides/soDry1.hbs",
+                "targetPath": "partials/slides/soDry1",
+                "pageTitle": "partials/slides/soDry1",
+                "title": "soDry1"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/soDry2.hbs",
+                "projectPath": "partials/slides/soDry2.hbs",
+                "targetPath": "partials/slides/soDry2",
+                "pageTitle": "partials/slides/soDry2",
+                "title": "soDry2"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
                 "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/whatIs.hbs",
                 "projectPath": "partials/slides/whatIs.hbs",
                 "targetPath": "partials/slides/whatIs",
