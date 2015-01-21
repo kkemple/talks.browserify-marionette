@@ -446,6 +446,27 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
                   "foldPrefix": "^",
                   "name": "Handlebars"
                 },
+                "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/aboutMeEntry.hbs",
+                "projectPath": "partials/slides/aboutMeEntry.hbs",
+                "targetPath": "partials/slides/aboutMeEntry",
+                "pageTitle": "partials/slides/aboutMeEntry",
+                "title": "aboutMeEntry"
+              },
+              "depth": 3,
+              "outline": []
+            }, {
+              "type": "file",
+              "data": {
+                "language": {
+                  "nameMatchers": [".handlebars", ".hbs"],
+                  "pygmentsLexer": "html",
+                  "highlightJS": "handlebars",
+                  "multiLineComment": ["<!--", "", "-->", "{{!", "", "}}"],
+                  "strictMultiLineEnd": true,
+                  "ignorePrefix": "#",
+                  "foldPrefix": "^",
+                  "name": "Handlebars"
+                },
                 "sourcePath": "/Users/kkemple/Documents/projects/browserify-marionette/partials/slides/entry.hbs",
                 "projectPath": "partials/slides/entry.hbs",
                 "targetPath": "partials/slides/entry",
