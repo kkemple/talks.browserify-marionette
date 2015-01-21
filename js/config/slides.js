@@ -7,6 +7,7 @@
 module.exports = [
     { id: 'entry', title: 'Browserify + Marionette = <3', titleSlide: true },
     { id: 'followAlong', title: 'Browserify + Marionette - Follow Along', steps: 3 },
+    { id: 'aboutMeEntry', title: 'Browserify + Marionette - Who the $&#! Is This Guy', steps: 3 },
     { id: 'whatIs', title: 'Browserify + Marionette - What Is Browserify', titleSlide: true },
     { id: 'whatIsQuote', title: 'Browserify + Marionette - What Is Browserify - Quote' },
     { id: 'whyUse', title: 'Browserify + Marionette - Why use Browserify?', titleSlide: true },

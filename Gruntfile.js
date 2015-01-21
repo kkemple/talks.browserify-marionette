@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     grunt.registerTask('test', ['jshint', /*'jasmine'*/]);
 
     // build the app output
-    grunt.registerTask('build', ['test', 'clean',  'copy', 'compile-templates', 'sass', 'uglify', 'browserify']);
+    grunt.registerTask('build', ['test', 'clean',  'copy', 'compile-templates', 'sass', 'uglify:deps', 'browserify', 'uglify:bundle']);
 
     /**
      * Custom grunt task to automagically require all templates for the slides

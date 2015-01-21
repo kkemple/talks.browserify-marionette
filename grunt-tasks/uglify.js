@@ -1,5 +1,5 @@
 module.exports = {
-    dependencies: {
+    deps: {
         files: {
             'dist/js/dependencies.min.js': [
                 'vendor/underscore/underscore.js',
@@ -7,6 +7,11 @@ module.exports = {
                 'vendor/backbone/backbone.js',
                 'vendor/marionette/lib/backbone.marionette.js'
             ]
+        }
+    },
+    bundle: {
+        files: {
+            'dist/js/app.min.js': 'dist/js/app.js'
         }
     }
 };
