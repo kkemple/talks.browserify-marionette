@@ -42,8 +42,27 @@ The actual slides for the presentation can be viewed at [http://kkemple.github.i
 
 ### Building the project
 
-After you clone/fork the repo run `npm install`, then run `bower install` (you will need to have Bower installed globally).
+Clone the repo `git clone git@github.com:kkemple/talks.browserify-marionette.git`
+
+Make sure you have Node.js or IO.js installed. If you do not you can get them here:
+
+- Node: [http://nodejs.org](http://nodejs.org)
+- IO: [http://nodejs.org](http://nodejs.org)
+
+Next you will need to install `grunt-cli` and `bower` globally if you do not already have them installed:
+
+```shell
+npm install grunt-cli -g
+```
+
+```shell
+npm install bower -g
+```
+
+Next you will need to run `npm install`, and then run `bower install`.
 
 Then simply run `grunt build`
 
 Everything is copied in to the dist folder so the presentation can be viewed anywhere. (Like GitHub pages)
+
+> NOTE: if you do not have Ruby and Sass gem installed you will encounter errors during the Grunt build. Please install them if you do not have them already.
